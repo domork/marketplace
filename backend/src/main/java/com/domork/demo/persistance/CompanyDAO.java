@@ -26,4 +26,12 @@ public interface CompanyDAO {
      * @return company with the given ID
      */
     Company getOneById (Long id);
+
+    /**
+     * Removes from DB the company with given ID.
+     * All tables, where this company was included,
+     * will delete their expressions as well
+     * @param id of company to be removed
+     */
+    void deleteById (Long id);
 }

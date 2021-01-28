@@ -68,6 +68,12 @@ public class CompanyJdbcDAO implements CompanyDAO {
         return companies.get(0);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        LOGGER.trace("deleteById({})", id);
+        jdbcTemplate.update("DELETE FROM company WHERE ID=?",id);
+    }
+
     private Company mapRow(ResultSet resultSet, int i) throws SQLException{
         final Company company = new Company();
         company.setId(resultSet.getLong("id"));

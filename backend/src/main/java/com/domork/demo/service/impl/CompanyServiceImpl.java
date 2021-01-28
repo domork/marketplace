@@ -38,8 +38,20 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public Company putNewCompany(Company company) {
+        LOGGER.trace("putNewCompany({})",company);
         validator.checkCompanyOnNullValues(company);
         validator.nameText(company.getName());
         return companyDAO.putNewCompany(company);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        LOGGER.trace("deleteById({})", id);
+        validator.idCheck(id);
+
+        //check, if company with given ID exists
+        companyDAO.getOneById(id);
+
+        companyDAO.deleteById(id);
     }
 }

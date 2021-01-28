@@ -1,0 +1,414 @@
+2021-01-28 09:06:50.791  INFO 2420 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 2420 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 09:06:50.791  INFO 2420 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 09:06:51.502  INFO 2420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 09:06:51.518  INFO 2420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 09:06:51.518  INFO 2420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 09:06:51.581  INFO 2420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 09:06:51.581  INFO 2420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 759 ms
+2021-01-28 09:06:51.612  INFO 2420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 09:06:51.722  INFO 2420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 09:06:51.737  INFO 2420 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 09:06:51.894  INFO 2420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 09:06:52.034  INFO 2420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 09:06:52.034  INFO 2420 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.623 seconds (JVM running for 2.696)
+2021-01-28 09:37:01.506  INFO 2420 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 09:37:01.506  INFO 2420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 09:37:01.506  INFO 2420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-01-28 09:37:01.522  INFO 2420 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 10:01:49.698  INFO 2420 --- [http-nio-8080-exec-4] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 10:01:55.929  INFO 2420 --- [http-nio-8080-exec-2] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 10:02:03.905  INFO 2420 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 10:02:29.837  INFO 2420 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 10:02:32.467  INFO 2420 --- [http-nio-8080-exec-9] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 10:07:19.594  INFO 2420 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 10:35:45.572  INFO 1864 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 1864 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 10:35:45.574  INFO 1864 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 10:35:46.238  INFO 1864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 10:35:46.244  INFO 1864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 10:35:46.244  INFO 1864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 10:35:46.310  INFO 1864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 10:35:46.310  INFO 1864 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 705 ms
+2021-01-28 10:35:46.339  INFO 1864 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 10:35:46.477  INFO 1864 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 10:35:46.481  INFO 1864 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 10:35:46.634  INFO 1864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 10:35:46.777  INFO 1864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 10:35:46.785  INFO 1864 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.593 seconds (JVM running for 2.158)
+2021-01-28 10:53:54.736  INFO 4040 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 4040 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 10:53:54.738  INFO 4040 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 10:53:55.405  INFO 4040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 10:53:55.411  INFO 4040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 10:53:55.411  INFO 4040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 10:53:55.476  INFO 4040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 10:53:55.476  INFO 4040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 710 ms
+2021-01-28 10:53:55.503  INFO 4040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 10:53:55.619  INFO 4040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 10:53:55.624  INFO 4040 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 10:53:55.770  INFO 4040 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 10:53:55.902  INFO 4040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 10:53:55.910  INFO 4040 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.519 seconds (JVM running for 2.131)
+2021-01-28 11:12:52.429  INFO 4820 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 4820 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 11:12:52.431  INFO 4820 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 11:12:53.068  INFO 4820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 11:12:53.074  INFO 4820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 11:12:53.074  INFO 4820 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 11:12:53.135  INFO 4820 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 11:12:53.135  INFO 4820 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 675 ms
+2021-01-28 11:12:53.162  INFO 4820 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 11:12:54.299 ERROR 4820 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Domain "PRODUCTCONDITION" already exists; SQL statement:
+CREATE TYPE productCondition AS ENUM ('new','like new','used','acceptable') [90119-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.get(DbException.java:205) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.get(DbException.java:181) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.ddl.CreateDomain.update(CreateDomain.java:54) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.dml.RunScriptCommand.execute(RunScriptCommand.java:79) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.dml.RunScriptCommand.update(RunScriptCommand.java:58) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Command.executeUpdate(Command.java:251) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Engine.openSession(Engine.java:243) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Engine.createSession(Engine.java:166) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Engine.createSession(Engine.java:29) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.Driver.connect(Driver.java:69) ~[h2-1.4.200.jar:1.4.200]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.5.jar:na]
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:67) ~[spring-boot-autoconfigure-2.4.2.jar:2.4.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2035) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:66) ~[spring-boot-autoconfigure-2.4.2.jar:2.4.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:259) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:233) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:451) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:200) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.4.2.jar:2.4.2]
+	at com.domork.demo.PetProjectApplication.main(PetProjectApplication.java:10) ~[classes/:na]
+
+2021-01-28 11:12:54.436  INFO 4820 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 11:12:54.569  INFO 4820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 11:12:54.577  INFO 4820 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 2.459 seconds (JVM running for 2.998)
+2021-01-28 11:13:22.358  INFO 5008 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 5008 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 11:13:22.361  INFO 5008 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 11:13:23.000  INFO 5008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 11:13:23.005  INFO 5008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 11:13:23.005  INFO 5008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 11:13:23.066  INFO 5008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 11:13:23.066  INFO 5008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 675 ms
+2021-01-28 11:13:23.093  INFO 5008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 11:13:23.195  INFO 5008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 11:13:23.199  INFO 5008 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 11:13:23.348  INFO 5008 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 11:13:23.482  INFO 5008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 11:13:23.490  INFO 5008 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.446 seconds (JVM running for 1.968)
+2021-01-28 11:15:26.900  INFO 12944 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 12944 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 11:15:26.904  INFO 12944 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 11:15:27.557  INFO 12944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 11:15:27.563  INFO 12944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 11:15:27.563  INFO 12944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 11:15:27.632  INFO 12944 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 11:15:27.632  INFO 12944 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 698 ms
+2021-01-28 11:15:27.662  INFO 12944 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 11:15:27.776  INFO 12944 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 11:15:27.781  INFO 12944 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 11:15:27.920  INFO 12944 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 11:15:28.049  INFO 12944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 11:15:28.057  INFO 12944 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.503 seconds (JVM running for 2.061)
+2021-01-28 11:21:31.344  INFO 440 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 440 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 11:21:31.346  INFO 440 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 11:21:32.012  INFO 440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 11:21:32.017  INFO 440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 11:21:32.017  INFO 440 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 11:21:32.082  INFO 440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 11:21:32.083  INFO 440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 704 ms
+2021-01-28 11:21:32.112  INFO 440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 11:21:32.213  INFO 440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 11:21:32.217  INFO 440 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 11:21:32.358  INFO 440 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 11:21:32.488  INFO 440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 11:21:32.497  INFO 440 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.499 seconds (JVM running for 2.082)
+2021-01-28 11:28:27.535  INFO 440 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 11:28:27.536  INFO 440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 11:28:27.536  INFO 440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-01-28 11:28:27.559  INFO 440 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 11:28:30.938  INFO 440 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 11:28:32.100  INFO 440 --- [http-nio-8080-exec-2] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 12:28:59.811  INFO 440 --- [http-nio-8080-exec-10] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 12:29:08.297  INFO 440 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 12:29:14.833  INFO 440 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 12:31:05.574  INFO 440 --- [http-nio-8080-exec-9] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 12:31:05.922  INFO 440 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 12:31:08.091  INFO 440 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 12:31:08.352  INFO 440 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:37:33.823  INFO 10536 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 10536 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 13:37:33.825  INFO 10536 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 13:37:34.578  INFO 10536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 13:37:34.584  INFO 10536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 13:37:34.585  INFO 10536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 13:37:34.648  INFO 10536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 13:37:34.648  INFO 10536 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 794 ms
+2021-01-28 13:37:34.675  INFO 10536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 13:37:34.771  INFO 10536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 13:37:34.775  INFO 10536 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 13:37:34.915  INFO 10536 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 13:37:35.044  INFO 10536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 13:37:35.052  INFO 10536 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.549 seconds (JVM running for 2.073)
+2021-01-28 13:38:13.926  INFO 1772 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 1772 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 13:38:13.928  INFO 1772 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 13:38:14.571  INFO 1772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 13:38:14.577  INFO 1772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 13:38:14.577  INFO 1772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 13:38:14.640  INFO 1772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 13:38:14.641  INFO 1772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 685 ms
+2021-01-28 13:38:14.667  INFO 1772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 13:38:14.760  INFO 1772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 13:38:14.764  INFO 1772 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 13:38:14.904  INFO 1772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 13:38:15.030  INFO 1772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 13:38:15.038  INFO 1772 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.427 seconds (JVM running for 1.934)
+2021-01-28 13:39:13.701  INFO 1772 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 13:39:13.702  INFO 1772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 13:39:13.703  INFO 1772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-01-28 13:39:13.764  INFO 1772 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : PUT /company/CompanyDto{id=null, name='AMD'}
+2021-01-28 13:39:18.740  INFO 1772 --- [http-nio-8080-exec-4] com.domork.demo.enpoint.CompanyEndpoint  : PUT /company/CompanyDto{id=null, name='Intel'}
+2021-01-28 13:39:23.151  INFO 1772 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : PUT /company/CompanyDto{id=null, name='Nvidia'}
+2021-01-28 13:39:48.562  INFO 1772 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : PUT /company/CompanyDto{id=null, name='Samsung'}
+2021-01-28 13:39:52.148  INFO 1772 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : PUT /company/CompanyDto{id=null, name='Apple'}
+2021-01-28 13:39:55.073  INFO 1772 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : PUT /company/CompanyDto{id=null, name='ARM'}
+2021-01-28 13:40:01.672  INFO 1772 --- [http-nio-8080-exec-8] com.domork.demo.enpoint.CompanyEndpoint  : PUT /company/CompanyDto{id=null, name='Google'}
+2021-01-28 13:40:13.621  INFO 1772 --- [http-nio-8080-exec-9] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:40:16.365  INFO 1772 --- [http-nio-8080-exec-10] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/3
+2021-01-28 13:41:07.879  INFO 1772 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/12
+2021-01-28 13:41:07.881  WARN 1772 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET COMPANY WITH ID: 12 THROWS 404
+2021-01-28 13:41:09.591  INFO 1772 --- [http-nio-8080-exec-4] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:41:13.198  INFO 1772 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/7
+2021-01-28 13:41:17.661  INFO 1772 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/13
+2021-01-28 13:41:17.662  WARN 1772 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET COMPANY WITH ID: 13 THROWS 404
+2021-01-28 13:41:25.114  INFO 1772 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/5
+2021-01-28 13:43:56.878  INFO 12368 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 12368 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 13:43:56.880  INFO 12368 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 13:43:57.521  INFO 12368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 13:43:57.526  INFO 12368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 13:43:57.527  INFO 12368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 13:43:57.590  INFO 12368 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 13:43:57.590  INFO 12368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 682 ms
+2021-01-28 13:43:57.617  INFO 12368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 13:43:57.719  INFO 12368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 13:43:57.723  INFO 12368 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 13:43:57.875  INFO 12368 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 13:43:58.006  INFO 12368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 13:43:58.015  INFO 12368 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.46 seconds (JVM running for 1.964)
+2021-01-28 13:44:01.462  INFO 12368 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 13:44:01.463  INFO 12368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 13:44:01.463  INFO 12368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-01-28 13:44:01.490  INFO 12368 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/11
+2021-01-28 13:44:01.516  WARN 12368 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET COMPANY WITH ID: 11 THROWS 404
+2021-01-28 13:48:08.578  INFO 12368 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:11.026  INFO 12368 --- [http-nio-8080-exec-4] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:17.224  INFO 12368 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/7
+2021-01-28 13:48:18.554  INFO 12368 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:19.165  INFO 12368 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/2
+2021-01-28 13:48:21.886  INFO 12368 --- [http-nio-8080-exec-9] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:23.594  INFO 12368 --- [http-nio-8080-exec-8] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/5
+2021-01-28 13:48:24.459  INFO 12368 --- [http-nio-8080-exec-10] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:26.782  INFO 12368 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/3
+2021-01-28 13:48:28.065  INFO 12368 --- [http-nio-8080-exec-2] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:30.384  INFO 12368 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/5
+2021-01-28 13:48:33.953  INFO 12368 --- [http-nio-8080-exec-4] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:34.540  INFO 12368 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/1
+2021-01-28 13:48:35.587  INFO 12368 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 13:48:35.998  INFO 12368 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 14:06:30.292  INFO 12368 --- [http-nio-8080-exec-8] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 14:08:05.635  INFO 12368 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/2
+2021-01-28 14:08:09.608  INFO 12368 --- [http-nio-8080-exec-2] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 14:08:10.552  INFO 12368 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/4
+2021-01-28 14:08:11.740  INFO 12368 --- [http-nio-8080-exec-4] com.domork.demo.enpoint.CompanyEndpoint  : GET /companyALL COMPANIES
+2021-01-28 19:20:30.089  INFO 3196 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 3196 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 19:20:30.091  INFO 3196 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 19:20:30.781  INFO 3196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 19:20:30.787  INFO 3196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 19:20:30.787  INFO 3196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 19:20:30.852  INFO 3196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 19:20:30.852  INFO 3196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 723 ms
+2021-01-28 19:20:30.881  INFO 3196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 19:20:30.985  INFO 3196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 19:20:30.989  INFO 3196 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 19:20:31.141  INFO 3196 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 19:20:31.273  INFO 3196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 19:20:31.282  INFO 3196 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.552 seconds (JVM running for 2.174)
+2021-01-28 19:20:47.660  INFO 3196 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 19:20:47.661  INFO 3196 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 19:20:47.662  INFO 3196 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-01-28 19:20:47.684  INFO 3196 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:20:49.146  INFO 3196 --- [http-nio-8080-exec-2] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/1
+2021-01-28 19:20:51.703  INFO 3196 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:47:50.110  INFO 7236 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 7236 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 19:47:50.112  INFO 7236 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 19:47:50.784  INFO 7236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 19:47:50.790  INFO 7236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 19:47:50.790  INFO 7236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 19:47:50.856  INFO 7236 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 19:47:50.857  INFO 7236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 716 ms
+2021-01-28 19:47:50.888  INFO 7236 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 19:47:50.999  INFO 7236 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 19:47:51.004  INFO 7236 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 19:47:51.147  INFO 7236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 19:47:51.276  INFO 7236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 19:47:51.284  INFO 7236 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.538 seconds (JVM running for 2.108)
+2021-01-28 19:48:17.021  INFO 7236 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 19:48:17.022  INFO 7236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 19:48:17.023  INFO 7236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-01-28 19:48:17.047  INFO 7236 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:48:19.380  INFO 7236 --- [http-nio-8080-exec-2] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/7
+2021-01-28 19:48:26.827  INFO 7236 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : DELETE /company/7
+2021-01-28 19:48:30.062  INFO 7236 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : DELETE /company/7
+2021-01-28 19:48:34.860  INFO 7236 --- [http-nio-8080-exec-9] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:48:40.014  INFO 7236 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : DELETE /company/6
+2021-01-28 19:48:42.845  INFO 7236 --- [http-nio-8080-exec-8] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/6
+2021-01-28 19:48:42.848  WARN 7236 --- [http-nio-8080-exec-8] com.domork.demo.enpoint.CompanyEndpoint  : GET COMPANY WITH ID: 6 THROWS 404
+2021-01-28 19:48:45.022  INFO 7236 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:48:46.050  INFO 7236 --- [http-nio-8080-exec-10] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/1
+2021-01-28 19:48:47.294  INFO 7236 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:48:48.723  INFO 7236 --- [http-nio-8080-exec-2] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/3
+2021-01-28 19:48:49.905  INFO 7236 --- [http-nio-8080-exec-4] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:49:19.313  INFO 7236 --- [http-nio-8080-exec-6] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/3
+2021-01-28 19:49:20.236  INFO 7236 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 19:49:21.200  INFO 7236 --- [http-nio-8080-exec-9] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/1
+2021-01-28 19:49:22.987  INFO 7236 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 20:09:38.973  INFO 1876 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 1876 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 20:09:38.975  INFO 1876 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 20:09:39.650  INFO 1876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:09:39.656  INFO 1876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 20:09:39.656  INFO 1876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 20:09:39.722  INFO 1876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 20:09:39.722  INFO 1876 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 718 ms
+2021-01-28 20:09:39.751  INFO 1876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 20:09:39.847  INFO 1876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 20:09:39.851  INFO 1876 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 20:09:39.992  INFO 1876 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 20:09:40.123  INFO 1876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 20:09:40.131  INFO 1876 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.516 seconds (JVM running for 2.076)
+2021-01-28 20:09:43.263  INFO 1876 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 20:09:43.265  INFO 1876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 20:09:43.265  INFO 1876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-01-28 20:09:43.292  INFO 1876 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/1
+2021-01-28 20:10:00.229  INFO 1876 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/6
+2021-01-28 20:10:00.231  WARN 1876 --- [http-nio-8080-exec-5] com.domork.demo.enpoint.CompanyEndpoint  : GET COMPANY WITH ID: 6 THROWS 404
+2021-01-28 20:10:05.358  INFO 1876 --- [http-nio-8080-exec-7] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 20:10:06.461  INFO 1876 --- [http-nio-8080-exec-8] com.domork.demo.enpoint.CompanyEndpoint  : GET ALL COMPANIES
+2021-01-28 20:10:21.647  INFO 1876 --- [http-nio-8080-exec-9] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/5
+2021-01-28 20:10:57.632  INFO 7776 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 7776 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 20:10:57.634  INFO 7776 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 20:10:58.278  INFO 7776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:10:58.283  INFO 7776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 20:10:58.284  INFO 7776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 20:10:58.344  INFO 7776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 20:10:58.345  INFO 7776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 681 ms
+2021-01-28 20:10:58.372  INFO 7776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 20:10:58.471  INFO 7776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 20:10:58.475  INFO 7776 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 20:10:58.617  INFO 7776 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 20:10:58.745  INFO 7776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 20:10:58.753  INFO 7776 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.437 seconds (JVM running for 1.963)
+2021-01-28 20:10:59.369  INFO 7776 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 20:10:59.369  INFO 7776 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 20:10:59.370  INFO 7776 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-01-28 20:10:59.399  INFO 7776 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : GET /company/5
+2021-01-28 20:29:00.250  INFO 11760 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 11760 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 20:29:00.252  INFO 11760 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 20:29:00.926  INFO 11760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:29:00.932  INFO 11760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 20:29:00.932  INFO 11760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 20:29:00.998  INFO 11760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 20:29:00.999  INFO 11760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 718 ms
+2021-01-28 20:29:01.028  INFO 11760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 20:29:01.126  INFO 11760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 20:29:01.130  INFO 11760 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 20:29:01.276  INFO 11760 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 20:29:01.410  INFO 11760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 20:29:01.418  INFO 11760 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.49 seconds (JVM running for 2.014)
+2021-01-28 20:29:11.965  INFO 11760 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 20:29:11.966  INFO 11760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 20:29:11.967  INFO 11760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-01-28 20:29:11.988  INFO 11760 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : DELETE /company/65
+2021-01-28 20:29:23.254  INFO 11760 --- [http-nio-8080-exec-3] com.domork.demo.enpoint.CompanyEndpoint  : DELETE /company/5
+2021-01-28 20:31:09.827  INFO 13656 --- [main] com.domork.demo.PetProjectApplication    : Starting PetProjectApplication using Java 11.0.9 on DESKTOP-19NA2H0 with PID 13656 (C:\Users\Dmytro\IdeaProjects\marketplace\backend\target\classes started by Dmytro in C:\Users\Dmytro\IdeaProjects\marketplace)
+2021-01-28 20:31:09.829  INFO 13656 --- [main] com.domork.demo.PetProjectApplication    : No active profile set, falling back to default profiles: default
+2021-01-28 20:31:10.508  INFO 13656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:31:10.514  INFO 13656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-28 20:31:10.514  INFO 13656 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-28 20:31:10.578  INFO 13656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-28 20:31:10.578  INFO 13656 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 719 ms
+2021-01-28 20:31:10.606  INFO 13656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-28 20:31:10.710  INFO 13656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-28 20:31:10.714  INFO 13656 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./db'
+2021-01-28 20:31:10.860  INFO 13656 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-28 20:31:10.993  INFO 13656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-28 20:31:11.001  INFO 13656 --- [main] com.domork.demo.PetProjectApplication    : Started PetProjectApplication in 1.513 seconds (JVM running for 2.028)
+2021-01-28 20:31:12.840  INFO 13656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-28 20:31:12.841  INFO 13656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-28 20:31:12.842  INFO 13656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-01-28 20:31:12.861  INFO 13656 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : DELETE /company/5
+2021-01-28 20:31:12.889  WARN 13656 --- [http-nio-8080-exec-1] com.domork.demo.enpoint.CompanyEndpoint  : DELETE COMPANY WITH ID: 5 THROWS 404

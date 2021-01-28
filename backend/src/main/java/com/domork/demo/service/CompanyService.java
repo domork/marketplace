@@ -28,4 +28,13 @@ public interface CompanyService {
      *                in DB.
      */
     Company putNewCompany(Company company);
+
+    /**
+     * Removes from DB the company with given ID.
+     * All tables, where this company was included,
+     * will delete their expressions as well
+     * @param id of company to be removed
+     */
+    void deleteById (Long id);
+
 }

@@ -6,10 +6,12 @@ import com.domork.demo.exception.NotFoundException;
 import com.domork.demo.enpoint.mapper.CompanyMapper;
 import com.domork.demo.exception.ValidationException;
 import com.domork.demo.service.CompanyService;
+import org.apache.coyote.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -32,25 +34,39 @@ public class CompanyEndpoint {
     }
 
     @GetMapping(value = "/{id}")
-    public CompanyDto getOneById(@PathVariable("id") Long id) {
+    public ResponseEntity<CompanyDto> getOneById(@PathVariable("id") Long id) {
         LOGGER.info("GET " + BASE_URL + "/{}", id);
         try {
-            return companyMapper.entityToDto(companyService.getOneById(id));
+            return new ResponseEntity<CompanyDto>(companyMapper.entityToDto(companyService.getOneById(id)), HttpStatus.OK);
         } catch (NotFoundException e) {
-            LOGGER.warn("GET COMPANY WITH ID: "+id+" THROWS 404");
+            LOGGER.warn("GET COMPANY WITH ID: " + id + " THROWS 404");
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error during reading company", e);
         }
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<CompanyDto> deleteOneById(@PathVariable("id") Long id) {
+        LOGGER.info("DELETE " + BASE_URL + "/{}", id);
+        try {
+
+            companyService.deleteById(id);
+            return new ResponseEntity<CompanyDto>(HttpStatus.OK);
+        } catch (NotFoundException e) {
+            LOGGER.warn("DELETE COMPANY WITH ID: " + id + " THROWS 404");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error during deleting company", e);
+        }
+    }
+
     @GetMapping
-    public List<CompanyDto> getAllCompanies() {
-        LOGGER.info("GET " + BASE_URL + "ALL COMPANIES");
+    public ResponseEntity<List<CompanyDto>> getAllCompanies() {
+        LOGGER.info("GET ALL COMPANIES");
         try {
             List<Company> companies = companyService.getAllCompanies();
             List<CompanyDto> companyDtos = new ArrayList<>();
             for (Company company : companies) {
                 companyDtos.add(companyMapper.entityToDto(company));
             }
-            return companyDtos;
+            return new ResponseEntity<>(companyDtos, HttpStatus.OK);
         } catch (NotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error during reading companies", e);
 
@@ -58,14 +74,14 @@ public class CompanyEndpoint {
     }
 
     @PutMapping("/")
-    public CompanyDto put(@RequestBody CompanyDto company) {
+    public ResponseEntity<CompanyDto> put(@RequestBody CompanyDto company) {
         LOGGER.info("PUT " + BASE_URL + "/{}", company);
         try {
+            return new ResponseEntity<>(companyMapper.entityToDto(companyService.putNewCompany(companyMapper.dtoToEntity(company))), HttpStatus.OK);
 
-            return companyMapper.entityToDto(companyService.putNewCompany(companyMapper.dtoToEntity(company)));
-        } catch (ValidationException e){
+        } catch (ValidationException e) {
             LOGGER.warn("PUT COMPANY THROWS BAD REQUEST ({})", company);
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,e.getMessage(),e);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
         }
 
     }

@@ -22,4 +22,13 @@ public interface Validator {
      * @return true, if name of company is not null.
      */
     boolean checkCompanyOnNullValues(Company company);
+
+
+    /**
+     * Checks, if the ID is not null, bigger than 0
+     * and smaller than MAXVALUE.
+     * @param ID
+     * @return
+     */
+    boolean idCheck(Long ID);
 }

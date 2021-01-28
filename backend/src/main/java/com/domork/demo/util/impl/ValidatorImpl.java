@@ -35,4 +35,16 @@ public class ValidatorImpl implements Validator {
             return true;
         else throw new ValidationException("Name of company is null!");
     }
+
+    @Override
+    public boolean idCheck(Long ID) {
+        if (ID == null)
+            throw new ValidationException("ID is null. Type in the real value!");
+        else if (ID < 0||ID> Long.MAX_VALUE-1)
+            throw new ValidationException("ID is must be positive or that big!");
+        else return true;
+
+    }
+
+
 }
