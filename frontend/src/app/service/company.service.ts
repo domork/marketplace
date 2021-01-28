@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 import {Company} from '../dto/company';
 import {environment} from '../../environments/environment';
-import {catchError} from 'rxjs/operators';
+import {MessageService} from './message.service';
 
 const baseUri = environment.backendUrl + '/company';
 
@@ -13,10 +13,18 @@ const baseUri = environment.backendUrl + '/company';
 export class CompanyService {
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getCompany(): Observable<number> {
-    return this.http.get<number>(baseUri);
+  getCompany(): Observable<Company[]> {
+    this.messageService.add('CompanyService: fetched companies');
+    return this.http.get<Company[]>(baseUri);
   }
+
+  getCompanyById(id: number): Observable<Company> {
+    this.messageService.add(`CompanyService: fetched company with id: ${id}`);
+    return this.http.get<Company>(baseUri + '/' + id);
+  }
+
+
 }

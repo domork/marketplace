@@ -8,12 +8,20 @@ import java.util.List;
 public interface CompanyService {
 
     /**
+     * Searches the company with ID
+     * @param id of company to be given.
+     * @return company with the given ID
+     */
+    Company getOneById (Long id);
+
+    /**
      * @return all companies from the DB
      */
     List<Company> getAllCompanies();
 
     /**
-     * The new company is to be added.
+     * The new company is to be added. The ID
+     * (positive Long number) will be generated in DB.
      * @param company should only contain the name.
      *                The ID will be ignored.
      * @return the company name and ID, which is stored

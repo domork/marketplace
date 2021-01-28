@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CompanyService} from '../../service/company.service';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
 import {Company} from '../../dto/company';
+import {MessageService} from '../../service/message.service';
 
 @Component({
   selector: 'app-company',
@@ -10,22 +9,17 @@ import {Company} from '../../dto/company';
   styleUrls: ['./company.component.scss']
 })
 export class CompanyComponent implements OnInit {
-  company: Company = {
-    id: 1,
-    name: 'AMD'
-  };
+  companies: Company[] = [];
 
-  constructor(private companyService: CompanyService) {
+  constructor(private companyService: CompanyService, private messageService: MessageService) {
   }
 
-  testGetRequest(): void {
-    this.companyService.getCompany().subscribe((i) => {
-      console.log(i);
-    });
-
+  getCompanies(): void {
+    this.companyService.getCompany().subscribe(companies => this.companies = companies);
   }
 
   ngOnInit(): void {
+    this.getCompanies();
   }
 
 }

@@ -31,6 +31,16 @@ public class CompanyEndpoint {
         this.companyService = companyService;
     }
 
+    @GetMapping(value = "/{id}")
+    public CompanyDto getOneById(@PathVariable("id") Long id) {
+        LOGGER.info("GET " + BASE_URL + "/{}", id);
+        try {
+            return companyMapper.entityToDto(companyService.getOneById(id));
+        } catch (NotFoundException e) {
+            LOGGER.warn("GET COMPANY WITH ID: "+id+" THROWS 404");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error during reading company", e);
+        }
+    }
     @GetMapping
     public List<CompanyDto> getAllCompanies() {
         LOGGER.info("GET " + BASE_URL + "ALL COMPANIES");
@@ -51,6 +61,7 @@ public class CompanyEndpoint {
     public CompanyDto put(@RequestBody CompanyDto company) {
         LOGGER.info("PUT " + BASE_URL + "/{}", company);
         try {
+
             return companyMapper.entityToDto(companyService.putNewCompany(companyMapper.dtoToEntity(company)));
         } catch (ValidationException e){
             LOGGER.warn("PUT COMPANY THROWS BAD REQUEST ({})", company);

@@ -58,6 +58,16 @@ public class CompanyJdbcDAO implements CompanyDAO {
         return company;
     }
 
+    @Override
+    public Company getOneById(Long id) {
+        LOGGER.trace("getOneById({})",id);
+        final String sql = "SELECT * FROM " + TABLE_NAME + " WHERE id=?";
+        List <Company> companies = jdbcTemplate.query(sql,new Object[]{id}, this::mapRow);
+        if (companies.isEmpty())throw new NotFoundException("There is no company with id: " + id);
+
+        return companies.get(0);
+    }
+
     private Company mapRow(ResultSet resultSet, int i) throws SQLException{
         final Company company = new Company();
         company.setId(resultSet.getLong("id"));

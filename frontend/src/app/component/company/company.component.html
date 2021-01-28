@@ -1,6 +1,9 @@
-<h2>{{company.name|uppercase}} Details</h2>
-<div><span>id: </span>{{company.id}}</div>
-<div>
-  name: {{company.name}}
-</div>
-<button (click)="testGetRequest()">save</button>
+<h2>
+  <ul class="companies">
+    <li *ngFor="let company of companies">
+      <a routerLink="/company/{{company.id}}">
+      <span class="badge">{{company.id}}</span> {{company.name}}
+      </a>
+    </li>
+  </ul>
+</h2>

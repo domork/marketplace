@@ -19,4 +19,11 @@ public interface CompanyDAO {
      *                in DB.
      */
     Company putNewCompany(Company company);
+
+    /**
+     * Searches the company with ID
+     * @param id of company to be given
+     * @return company with the given ID
+     */
+    Company getOneById (Long id);
 }

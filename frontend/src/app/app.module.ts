@@ -1,15 +1,22 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CompanyComponent } from './component/company/company.component';
-import { HttpClientModule } from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {CompanyComponent} from './component/company/company.component';
+import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {CompanyDetailComponent} from './component/company-detail/company-detail.component';
+import { MessagesComponent } from './component/messages/messages.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyComponent
+    CompanyComponent,
+    CompanyDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -20,4 +27,5 @@ import {FormsModule} from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
