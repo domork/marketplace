@@ -77,6 +77,7 @@ public class CompanyEndpoint {
     }
 
 
+
     @PutMapping
     public ResponseEntity<CompanyDto> put(@RequestBody CompanyDto company) {
         LOGGER.info("PUT " + BASE_URL + "/{}", company);
