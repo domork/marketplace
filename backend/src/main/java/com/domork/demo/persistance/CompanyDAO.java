@@ -34,4 +34,31 @@ public interface CompanyDAO {
      * @param id of company to be removed
      */
     void deleteById (Long id);
+
+    /**
+     * Finds all companies, which start with
+     * the follow name.
+     * E.x. There are follow
+     * companies:
+     * "AMA", "AAM", "AMWQL".
+     * The param name is "AM" ->
+     * "AMA" and "AMWQL" will be returned
+     * @param name of companies to be find
+     * @return the list of companies with given name
+     */
+    List<Company> getAllCompaniesWithGivenName(String name);
+
+
+    /**
+     * Finds the company, which has exactly
+     * the follow name.
+     * E.x. There are follow
+     * companies:
+     * "AM", "AMD", "ABC".
+     * The param name is "AM" ->
+     * "AMA" will be returned
+     * @param name of company to be find
+     * @return the company with given name
+     */
+    Company getCompanyByName(String name);
 }

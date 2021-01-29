@@ -2,11 +2,12 @@ CREATE TYPE IF NOT EXISTS productCondition AS ENUM ('new','like new','used','acc
 CREATE TABLE IF NOT EXISTS company
 (
   ID          BIGINT AUTO_INCREMENT PRIMARY KEY,
-  name        VARCHAR(255) NOT NULL
+  name        VARCHAR(255) NOT NULL UNIQUE
 );
 CREATE TABLE IF NOT EXISTS product
 (
     ID          BIGINT AUTO_INCREMENT PRIMARY KEY,
+    category    VARCHAR(255),
     name        VARCHAR(255) NOT NULL,
     description VARCHAR (255),
     price       DECIMAL,
@@ -30,9 +31,8 @@ CREATE TABLE IF NOT EXISTS basedOn
 CREATE TABLE IF NOT EXISTS companyDetailInformation
 (
     ID              BIGINT PRIMARY KEY,
+    website         VARCHAR(255),
     description     VARCHAR(255),
-    foundationDate  DATE,
-    numOfEmployees  INTEGER,
     basedIn         VARCHAR(255),
     FOREIGN KEY (ID) REFERENCES company(ID)
 );

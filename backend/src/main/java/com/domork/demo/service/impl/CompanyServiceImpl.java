@@ -16,7 +16,7 @@ import java.util.List;
 public class CompanyServiceImpl implements CompanyService {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private final CompanyDAO companyDAO;
-    private Validator validator;
+    private final Validator validator;
 
     @Autowired
     public CompanyServiceImpl(CompanyDAO companyDAO, Validator validator) {
@@ -53,5 +53,17 @@ public class CompanyServiceImpl implements CompanyService {
         companyDAO.getOneById(id);
 
         companyDAO.deleteById(id);
+    }
+
+    @Override
+    public Company getCompanyByName(String name) {
+        return companyDAO.getCompanyByName(name);
+    }
+
+    @Override
+    public List<Company> getAllCompaniesWithGivenName(String name) {
+        if (!name.equals(""))
+        validator.nameText(name);
+        return companyDAO.getAllCompaniesWithGivenName(name);
     }
 }
