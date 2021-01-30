@@ -19,10 +19,10 @@ export class CompanyDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getHero();
+    this.getCompany();
   }
 
-  getHero(): void {
+  getCompany(): void {
     // @ts-ignore
     const id = +this.route.snapshot.paramMap.get('id');
     this.companyService.getCompanyById(id).subscribe(company => this.company = company);

@@ -6,11 +6,6 @@ import java.util.List;
 
 public interface CompanyDAO {
 
-    /**All companies
-     * @return all companies from the DB
-     */
-    List<Company> getAllCompanies();
-
     /**
      * The new company is to be added.
      * @param company should only contain the name.

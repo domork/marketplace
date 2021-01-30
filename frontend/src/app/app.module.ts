@@ -6,8 +6,9 @@ import {CompanyComponent} from './component/company/company.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {CompanyDetailComponent} from './component/company-detail/company-detail.component';
-import { MessagesComponent } from './component/messages/messages.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
+import {MessagesComponent} from './component/messages/messages.component';
+import {DashboardComponent} from './component/dashboard/dashboard.component';
+import {CompanyAddComponent} from './component/company-add/company-add.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     CompanyDetailComponent,
     MessagesComponent,
     DashboardComponent,
-
+    CompanyAddComponent
   ],
   imports: [
     BrowserModule,

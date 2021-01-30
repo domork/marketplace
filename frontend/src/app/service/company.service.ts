@@ -5,6 +5,7 @@ import {Company} from '../dto/company';
 import {environment} from '../../environments/environment';
 import {MessageService} from './message.service';
 import {catchError, map, tap} from 'rxjs/operators';
+import {CompanyExtended} from '../dto/company-extended';
 
 const baseUri = environment.backendUrl + '/company';
 
@@ -13,6 +14,7 @@ const baseUri = environment.backendUrl + '/company';
 })
 export class CompanyService {
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+  parsedCompany: Company = {id: undefined, name: '2'};
 
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
@@ -27,6 +29,17 @@ export class CompanyService {
     return this.http.get<Company>(baseUri + '/' + id);
   }
 
+  addNewCompany(company: CompanyExtended): Observable<Company> {
+    this.parsedCompany = {
+      id: undefined,
+      name: company.name
+    };
+    console.log(this.parsedCompany);
+    return this.http.put<Company>(baseUri, this.parsedCompany, this.httpOptions);
+
+  }
+
+
   private handleError<T>(operation = 'operation', result?: T): any {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
@@ -36,8 +49,8 @@ export class CompanyService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-
   }
+
 
   private log(message: string): void {
     this.messageService.add(`CompanyService: ${message}`);

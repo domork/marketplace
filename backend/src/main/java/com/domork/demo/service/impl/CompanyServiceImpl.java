@@ -27,13 +27,8 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Company getOneById(Long id) {
         LOGGER.trace("getOneById({})",id);
+        validator.idCheck(id);
         return companyDAO.getOneById(id);
-    }
-
-    @Override
-    public List<Company> getAllCompanies() {
-        LOGGER.trace("GetAllCompanies");
-        return companyDAO.getAllCompanies();
     }
 
     @Override

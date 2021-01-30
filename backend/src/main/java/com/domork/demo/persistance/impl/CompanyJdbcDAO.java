@@ -34,14 +34,7 @@ public class CompanyJdbcDAO implements CompanyDAO {
     }
 
 
-    @Override
-    public List<Company> getAllCompanies() {
-        LOGGER.trace("get all companies");
-        final String sql = "SELECT * FROM COMPANY";
-        List<Company> companies = jdbcTemplate.query(sql, new Object[]{}, this::mapRow);
-        if (companies.isEmpty()) throw new NotFoundException("Could not find any company");
-        return companies;
-    }
+
 
     @Override
     public Company putNewCompany(Company company) {
@@ -86,10 +79,11 @@ public class CompanyJdbcDAO implements CompanyDAO {
     @Override
     public Company getCompanyByName(String name) {
         final String sql = "SELECT * FROM company WHERE name ='"+name+"'";
-        Company company = jdbcTemplate.query(sql,new Object[]{},this::mapRow).get(0);
-        if (company == null)
+
+        List<Company> company = jdbcTemplate.query(sql,new Object[]{},this::mapRow);
+        if (company.isEmpty())
             throw new NotFoundException ("No company with given name template was found");
-        return company;
+        return company.get(0);
     }
 
     private Company mapRow(ResultSet resultSet, int i) throws SQLException {

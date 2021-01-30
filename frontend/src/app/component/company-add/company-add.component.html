@@ -1,24 +1,38 @@
-<h3>Add a new company!<span class="badge bg-secondary">New</span></h3>
-<div class="card card-body mb-2">
-<p>
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
-</p>
-<div class="row">
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+<div class="container">
+  <h1>Hero Form</h1>
+  <form (ngSubmit)="onSubmit()" #company="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="model.name" name="name"
+             #name="ngModel">
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        Name is required
       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample2">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
+
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" class="form-control" id="website"
+             [(ngModel)]="model.website" name="website">
     </div>
-  </div>
-</div>
+
+    <div class="form-group">
+      <label for="basedIn">Based in</label>
+      <input type="text" class="form-control" id="basedIn"
+             [(ngModel)]="model.basedIn" name="basedIn">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description"
+             [(ngModel)]="model.description" name="description">
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!company.form.valid" (click)="add()">Submit</button>
+
+  </form>
 </div>

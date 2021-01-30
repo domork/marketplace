@@ -15,11 +15,6 @@ public interface CompanyService {
     Company getOneById (Long id);
 
     /**
-     * @return all companies from the DB
-     */
-    List<Company> getAllCompanies();
-
-    /**
      * The new company is to be added. The ID
      * (positive Long number) will be generated in DB.
      * @param company should only contain the name.

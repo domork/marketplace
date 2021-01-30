@@ -1,4 +1,4 @@
 export interface Company{
-  id: number;
+  id: number|undefined;
   name: string;
 }

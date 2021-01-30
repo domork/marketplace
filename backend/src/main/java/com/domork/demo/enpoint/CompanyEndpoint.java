@@ -92,13 +92,21 @@ public class CompanyEndpoint {
                 return new ResponseEntity<>
                         (companyMapper.entityToDto(
                                 companyService.putNewCompany
-                                        (companyMapper.dtoToEntity(company))), HttpStatus.OK);
+                                        (companyMapper.dtoToEntity(company))), HttpStatus.CREATED);
             }
         } catch (ValidationException e) {
             LOGGER.warn("PUT COMPANY THROWS BAD REQUEST ({})", company);
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage(), e);
         }
+        //otherwise bad request will be sent back
         LOGGER.warn("PUT COMPANY PROVIDES ALREADY EXISTING COMPANY ({})", company);
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This company already exists");
+        throw new ResponseStatusException(HttpStatus.CONFLICT, "This company already exists");
     }
+
+    @GetMapping(value = "/brew_coffee_with_a_teapot")
+    public String teaPot() {
+        LOGGER.info("I'M A TEAPOT" + BASE_URL +"/brew_coffee_with_a_teapot");
+        return "I am a teapot!";
+    }
+
 }
