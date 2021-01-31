@@ -4,8 +4,7 @@ import com.domork.demo.entity.Company;
 import com.domork.demo.exception.NotFoundException;
 import com.domork.demo.exception.PersistenceException;
 import com.domork.demo.persistance.CompanyDAO;
-import org.h2.jdbc.JdbcSQLException;
-import org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

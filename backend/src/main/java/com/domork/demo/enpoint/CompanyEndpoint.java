@@ -7,7 +7,6 @@ import com.domork.demo.enpoint.mapper.CompanyMapper;
 import com.domork.demo.exception.ValidationException;
 import com.domork.demo.service.CompanyService;
 import org.apache.coyote.Response;
-import org.h2.jdbc.JdbcSQLException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
