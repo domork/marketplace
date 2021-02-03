@@ -29,14 +29,8 @@ export class CompanyService {
     return this.http.get<Company>(baseUri + '/' + id);
   }
 
-  addNewCompany(company: CompanyExtended): Observable<Company> {
-    this.parsedCompany = {
-      id: undefined,
-      name: company.name
-    };
-    console.log(this.parsedCompany);
-    return this.http.put<Company>(baseUri, this.parsedCompany, this.httpOptions);
-
+  addNewCompany(company: CompanyExtended): Observable<CompanyExtended> {
+    return this.http.put<CompanyExtended>(baseUri, company, this.httpOptions);
   }
 
 

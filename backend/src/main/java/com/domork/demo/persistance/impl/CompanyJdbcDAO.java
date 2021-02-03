@@ -1,6 +1,7 @@
 package com.domork.demo.persistance.impl;
 
 import com.domork.demo.entity.Company;
+import com.domork.demo.entity.CompanyExtended;
 import com.domork.demo.exception.NotFoundException;
 import com.domork.demo.exception.PersistenceException;
 import com.domork.demo.persistance.CompanyDAO;
@@ -22,6 +23,7 @@ import java.util.Objects;
 @Repository
 public class CompanyJdbcDAO implements CompanyDAO {
     private static final String TABLE_NAME = "Company";
+    private static final String ADDITIONAL_TABLE_NAME = "Companydetailinformation";
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private final JdbcTemplate jdbcTemplate;
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -33,28 +35,40 @@ public class CompanyJdbcDAO implements CompanyDAO {
     }
 
 
-
-
     @Override
-    public Company putNewCompany(Company company) {
+    public CompanyExtended putNewCompany(CompanyExtended company) {
         LOGGER.trace("PUT NEW COMPANY({})", company);
         final String sql = "INSERT INTO company (name) VALUES (?);";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
-            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement statement =
+                    connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             int paramIndex = 1;
             statement.setString(paramIndex, company.getName());
             return statement;
         }, keyHolder);
         company.setId(((Number) Objects.requireNonNull(keyHolder.getKeys()).get("id")).longValue());
+
+        final String sqlExtended = "INSERT INTO companyDetailInformation " +
+                "(id,website,description,basedIn) VALUES(?,?,?,?)";
+        keyHolder = new GeneratedKeyHolder();
+        jdbcTemplate.update(connection -> {
+            PreparedStatement statement = connection.prepareStatement(sqlExtended, Statement.RETURN_GENERATED_KEYS);
+            int paramIndex = 1;
+            statement.setLong(paramIndex++, company.getId());
+            statement.setString(paramIndex++, company.getWebsite());
+            statement.setString(paramIndex++, company.getDescription());
+            statement.setString(paramIndex, company.getBasedIn());
+            return statement;
+        }, keyHolder);
         return company;
     }
 
     @Override
-    public Company getOneById(Long id) {
+    public CompanyExtended getOneById(Long id) {
         LOGGER.trace("getOneById({})", id);
-        final String sql = "SELECT * FROM " + TABLE_NAME + " WHERE id=?";
-        List<Company> companies = jdbcTemplate.query(sql, new Object[]{id}, this::mapRow);
+        final String sql = "SELECT * FROM " + TABLE_NAME + " natural join " + ADDITIONAL_TABLE_NAME + " WHERE id=?";
+        List<CompanyExtended> companies = jdbcTemplate.query(sql, new Object[]{id}, this::mapRowExtended);
         if (companies.isEmpty()) throw new NotFoundException("There is no company with id: " + id);
 
         return companies.get(0);
@@ -67,21 +81,22 @@ public class CompanyJdbcDAO implements CompanyDAO {
     }
 
     @Override
-    public List<Company> getAllCompaniesWithGivenName(String name) {
-        final String sql = "SELECT * FROM company WHERE name LIKE '"+name+"%'";
-        List <Company> companies = jdbcTemplate.query(sql,new Object[]{},this::mapRow);
+    public List<CompanyExtended> getAllCompaniesWithGivenName(String name) {
+        final String sql = "SELECT * FROM " + TABLE_NAME + " natural join " + ADDITIONAL_TABLE_NAME
+                + " WHERE name LIKE '" + name + "%' ORDER BY NAME ASC";
+        List<CompanyExtended> companies = jdbcTemplate.query(sql, new Object[]{}, this::mapRowExtended);
         if (companies.isEmpty())
-            throw new NotFoundException ("No company with given name template was found");
+            throw new NotFoundException("No company with given name template was found");
         return companies;
     }
 
     @Override
     public Company getCompanyByName(String name) {
-        final String sql = "SELECT * FROM company WHERE name ='"+name+"'";
+        final String sql = "SELECT * FROM company WHERE name ='" + name + "'";
 
-        List<Company> company = jdbcTemplate.query(sql,new Object[]{},this::mapRow);
+        List<Company> company = jdbcTemplate.query(sql, new Object[]{}, this::mapRow);
         if (company.isEmpty())
-            throw new NotFoundException ("No company with given name template was found");
+            throw new NotFoundException("No company with given name template was found");
         return company.get(0);
     }
 
@@ -89,6 +104,16 @@ public class CompanyJdbcDAO implements CompanyDAO {
         final Company company = new Company();
         company.setId(resultSet.getLong("id"));
         company.setName(resultSet.getString("name"));
+        return company;
+    }
+
+    private CompanyExtended mapRowExtended(ResultSet resultSet, int i) throws SQLException {
+        final CompanyExtended company = new CompanyExtended();
+        company.setId(resultSet.getLong("id"));
+        company.setName(resultSet.getString("name"));
+        company.setDescription(resultSet.getString("description"));
+        company.setBasedIn(resultSet.getString("basedIn"));
+        company.setWebsite(resultSet.getString("website"));
         return company;
     }
 }

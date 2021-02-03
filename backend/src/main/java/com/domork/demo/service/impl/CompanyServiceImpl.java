@@ -1,6 +1,8 @@
 package com.domork.demo.service.impl;
 
+import com.domork.demo.enpoint.dto.CompanyExtendedDto;
 import com.domork.demo.entity.Company;
+import com.domork.demo.entity.CompanyExtended;
 import com.domork.demo.persistance.CompanyDAO;
 import com.domork.demo.service.CompanyService;
 import com.domork.demo.util.Validator;
@@ -25,17 +27,16 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public Company getOneById(Long id) {
+    public CompanyExtended getOneById(Long id) {
         LOGGER.trace("getOneById({})",id);
         validator.idCheck(id);
         return companyDAO.getOneById(id);
     }
 
     @Override
-    public Company putNewCompany(Company company) {
+    public CompanyExtended putNewCompany(CompanyExtended company) {
         LOGGER.trace("putNewCompany({})",company);
-        validator.checkCompanyOnNullValues(company);
-        validator.nameText(company.getName());
+        validator.checkCompany(company);
         return companyDAO.putNewCompany(company);
     }
 
@@ -56,7 +57,7 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public List<Company> getAllCompaniesWithGivenName(String name) {
+    public List<CompanyExtended> getAllCompaniesWithGivenName(String name) {
         if (!name.equals(""))
         validator.nameText(name);
         return companyDAO.getAllCompaniesWithGivenName(name);

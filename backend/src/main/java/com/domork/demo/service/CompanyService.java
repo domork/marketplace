@@ -1,6 +1,9 @@
 package com.domork.demo.service;
 
+import com.domork.demo.enpoint.dto.CompanyExtendedDto;
 import com.domork.demo.entity.Company;
+import com.domork.demo.entity.CompanyExtended;
+import com.domork.demo.entity.Product;
 import com.domork.demo.persistance.CompanyDAO;
 
 import java.util.List;
@@ -12,7 +15,7 @@ public interface CompanyService {
      * @param id of company to be given.
      * @return company with the given ID
      */
-    Company getOneById (Long id);
+    CompanyExtended getOneById (Long id);
 
     /**
      * The new company is to be added. The ID
@@ -22,7 +25,7 @@ public interface CompanyService {
      * @return the company name and ID, which is stored
      *                in DB.
      */
-    Company putNewCompany(Company company);
+    CompanyExtended putNewCompany(CompanyExtended company);
 
     /**
      * Removes from DB the company with given ID.
@@ -56,5 +59,7 @@ public interface CompanyService {
      * @param name of companies to be find
      * @return the list of companies with given name
      */
-    List<Company> getAllCompaniesWithGivenName(String name);
+    List<CompanyExtended> getAllCompaniesWithGivenName(String name);
+
+
 }

@@ -1,4 +1,5 @@
 CREATE TYPE productCondition AS ENUM ('new','like new','used','acceptable');
+
 CREATE TABLE IF NOT EXISTS company
 (
     ID          SERIAL PRIMARY KEY,
@@ -11,7 +12,7 @@ CREATE TABLE IF NOT EXISTS product
     category    VARCHAR(255),
     name        VARCHAR(255) NOT NULL,
     description VARCHAR (255),
-    price       DECIMAL,
+    price       DECIMAL (19,2),
     quantity    INTEGER DEFAULT 0,
     condition   productCondition DEFAULT 'new'
     );

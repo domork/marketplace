@@ -1,6 +1,7 @@
 package com.domork.demo.persistance;
 
 import com.domork.demo.entity.Company;
+import com.domork.demo.entity.CompanyExtended;
 
 import java.util.List;
 
@@ -13,14 +14,14 @@ public interface CompanyDAO {
      * @return the company name and ID, which is stored
      *                in DB.
      */
-    Company putNewCompany(Company company);
+    CompanyExtended putNewCompany(CompanyExtended company);
 
     /**
      * Searches the company with ID
      * @param id of company to be given
      * @return company with the given ID
      */
-    Company getOneById (Long id);
+    CompanyExtended getOneById (Long id);
 
     /**
      * Removes from DB the company with given ID.
@@ -41,7 +42,7 @@ public interface CompanyDAO {
      * @param name of companies to be find
      * @return the list of companies with given name
      */
-    List<Company> getAllCompaniesWithGivenName(String name);
+    List<CompanyExtended> getAllCompaniesWithGivenName(String name);
 
 
     /**

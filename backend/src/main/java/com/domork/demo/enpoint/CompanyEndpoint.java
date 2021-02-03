@@ -1,7 +1,10 @@
 package com.domork.demo.enpoint;
 
 import com.domork.demo.enpoint.dto.CompanyDto;
+import com.domork.demo.enpoint.dto.CompanyExtendedDto;
+import com.domork.demo.enpoint.mapper.CompanyExtendedMapper;
 import com.domork.demo.entity.Company;
+import com.domork.demo.entity.CompanyExtended;
 import com.domork.demo.exception.NotFoundException;
 import com.domork.demo.enpoint.mapper.CompanyMapper;
 import com.domork.demo.exception.ValidationException;
@@ -26,23 +29,24 @@ public class CompanyEndpoint {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private final CompanyService companyService;
     private final CompanyMapper companyMapper;
-
+    private final CompanyExtendedMapper companyExtendedMapper;
     @Autowired
-    public CompanyEndpoint(CompanyMapper companyMapper, CompanyService companyService) {
+    public CompanyEndpoint(CompanyMapper companyMapper, CompanyService companyService, CompanyExtendedMapper companyExtendedMapper) {
         this.companyMapper = companyMapper;
         this.companyService = companyService;
+        this.companyExtendedMapper=companyExtendedMapper;
     }
 
     @GetMapping
-    public ResponseEntity<List<CompanyDto>>
+    public ResponseEntity<List<CompanyExtendedDto>>
     getAllCompaniesWithGivenName(@RequestParam(value = "name", required = false, defaultValue = "")
                                          String name) {
         LOGGER.info("getAllCompaniesWithGivenName: ({})", name);
         try {
-            List<Company> companies = companyService.getAllCompaniesWithGivenName(name);
-            List<CompanyDto> companyDtos = new ArrayList<>();
-            for (Company company : companies) {
-                companyDtos.add(companyMapper.entityToDto(company));
+            List<CompanyExtended> companies = companyService.getAllCompaniesWithGivenName(name);
+            List<CompanyExtendedDto> companyDtos = new ArrayList<>();
+            for (CompanyExtended company : companies) {
+                companyDtos.add(companyExtendedMapper.entityToDto(company));
             }
             return new ResponseEntity<>(companyDtos, HttpStatus.OK);
         } catch (NotFoundException e) {
@@ -52,10 +56,10 @@ public class CompanyEndpoint {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<CompanyDto> getOneById(@PathVariable("id") Long id) {
+    public ResponseEntity<CompanyExtendedDto> getOneById(@PathVariable("id") Long id) {
         LOGGER.info("GET " + BASE_URL + "/{}", id);
         try {
-            return new ResponseEntity<CompanyDto>(companyMapper.entityToDto(companyService.getOneById(id)), HttpStatus.OK);
+            return new ResponseEntity<CompanyExtendedDto>(companyExtendedMapper.entityToDto(companyService.getOneById(id)), HttpStatus.OK);
         } catch (NotFoundException e) {
             LOGGER.warn("GET COMPANY WITH ID: " + id + " THROWS 404");
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error during reading company", e);
@@ -78,7 +82,7 @@ public class CompanyEndpoint {
 
 
     @PutMapping
-    public ResponseEntity<CompanyDto> put(@RequestBody CompanyDto company) {
+    public ResponseEntity<CompanyExtendedDto> put(@RequestBody CompanyExtendedDto company) {
         LOGGER.info("PUT " + BASE_URL + "/{}", company);
         try {
 
@@ -88,13 +92,13 @@ public class CompanyEndpoint {
             } catch (NotFoundException e) {
 
             //if not -> the new company will be saved
-                return new ResponseEntity<>
-                        (companyMapper.entityToDto(
+                return new ResponseEntity<CompanyExtendedDto>
+                        (companyExtendedMapper.entityToDto(
                                 companyService.putNewCompany
-                                        (companyMapper.dtoToEntity(company))), HttpStatus.CREATED);
+                                        (companyExtendedMapper.dtoToEntity(company))), HttpStatus.CREATED);
             }
         } catch (ValidationException e) {
-            LOGGER.warn("PUT COMPANY THROWS BAD REQUEST ({})", company);
+            LOGGER.warn("PUT COMPANY THROWS VALIDATION EXCEPTION ({})", company);
             throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage(), e);
         }
         //otherwise bad request will be sent back
