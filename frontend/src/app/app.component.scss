@@ -1,23 +1,42 @@
 /* AppComponent's private CSS styles */
-h1 {
-  font-size: 1.2em;
+@import '../main-styles.scss';
+
+.navbar {
+  background: linear-gradient(75deg, rgb(189, 171, 255), rgb(173, 203, 231));
+  display: flex;
   margin-bottom: 0;
-}
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-nav a:visited, a:link {
-  color: #334953;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #cfd8dc;
-}
-nav a.active {
-  color: #039be5;
-}
+.navbar-item{
+
+
+    font-family: 'Lato', serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $dark;
+    text-decoration: none;
+
+  nav a {
+
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    background-color: transparent;
+    border-radius: 4px;
+    font-family: 'Lato', serif;
+    font-weight: 400;
+  }
+
+  nav a:visited, a:link {
+    color: #334953;
+  }
+
+  nav a:hover {
+    color: #039be5;
+    background-color: #f2fbfd;
+  }
+
+  nav a.active {
+    color: #039be5;
+  }
+}}

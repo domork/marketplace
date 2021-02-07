@@ -19,14 +19,14 @@ export class CompanyService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getCompany(): Observable<Company[]> {
-    return this.http.get<Company[]>(baseUri).pipe(
-      tap(_ => this.log('fetched companies')), catchError(this.handleError<Company[]>('getCompany', [])));
+  getCompany(): Observable<CompanyExtended[]> {
+    return this.http.get<CompanyExtended[]>(baseUri).pipe(
+      tap(_ => this.log('fetched companies')), catchError(this.handleError<CompanyExtended[]>('getCompany', [])));
   }
 
-  getCompanyById(id: number): Observable<Company> {
+  getCompanyById(id: number): Observable<CompanyExtended> {
     this.messageService.add(`CompanyService: fetched company with id: ${id}`);
-    return this.http.get<Company>(baseUri + '/' + id);
+    return this.http.get<CompanyExtended>(baseUri + '/' + id);
   }
 
   addNewCompany(company: CompanyExtended): Observable<CompanyExtended> {

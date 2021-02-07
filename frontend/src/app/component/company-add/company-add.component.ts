@@ -11,7 +11,7 @@ import {CompanyService} from '../../service/company.service';
 export class CompanyAddComponent implements OnInit {
 
   model = new CompanyExtended
-  (undefined, 'AMD', 'www.amd.com', 'gud company', undefined);
+  (undefined, '', undefined, undefined, undefined);
   submitted = false;
 
   onSubmit(): void {
@@ -19,8 +19,7 @@ export class CompanyAddComponent implements OnInit {
   }
 
   add(): void {
-    this.companyService.addNewCompany(this.model).
-    subscribe(company => console.log(company + ' was successfully added'));
+    this.companyService.addNewCompany(this.model).subscribe(company => console.log(company + ' was successfully added'));
 
   }
 

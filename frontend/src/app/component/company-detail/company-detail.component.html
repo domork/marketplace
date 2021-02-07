@@ -4,8 +4,13 @@
   <div><span>id: </span>{{company.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="company.name" placeholder="name"/>
+      {{company.name}}
     </label>
+    <div>
+      <label>
+        website:{{company.website}}
+      </label>
+    </div>
   </div>
 
 </div>

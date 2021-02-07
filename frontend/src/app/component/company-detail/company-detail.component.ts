@@ -3,6 +3,7 @@ import {Company} from '../../dto/company';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {CompanyService} from '../../service/company.service';
+import {CompanyExtended} from '../../dto/company-extended';
 
 @Component({
   selector: 'app-company-detail',
@@ -10,7 +11,7 @@ import {CompanyService} from '../../service/company.service';
   styleUrls: ['./company-detail.component.scss']
 })
 export class CompanyDetailComponent implements OnInit {
-  @Input() company: Company | undefined;
+  @Input() company: CompanyExtended | undefined;
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,

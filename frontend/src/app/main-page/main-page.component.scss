@@ -1,0 +1,42 @@
+@import '../../main-styles.scss';
+
+.company-product-section {
+  display: flex;
+  height: 250px;
+  background: $dark;
+
+  // Horizontally and vertically center the text
+  justify-content: center;
+  align-items: center;
+
+  .buttons {
+    font-family: 'Lato', serif;
+    font-weight: 300;
+    font-size: 58px;
+    color: white;
+
+    .button.is-success.is-light, .button.is-primary.is-light{
+      background-color: transparent;
+      font-size: 58px;
+    }
+
+    &.green {
+      color: lighten($green, 12%);
+    }
+
+    &.red {
+      color: lighten($red, 12%);
+    }
+  }
+}
+
+.add-item-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .add-item-container {
+    width: 680px;
+    height: 50px;
+  }
+}

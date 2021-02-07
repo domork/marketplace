@@ -9,6 +9,8 @@ import {CompanyDetailComponent} from './component/company-detail/company-detail.
 import {MessagesComponent} from './component/messages/messages.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {CompanyAddComponent} from './component/company-add/company-add.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { AddItemFormComponent } from './component/add-item-form/add-item-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {CompanyAddComponent} from './component/company-add/company-add.component
     CompanyDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    CompanyAddComponent
+    CompanyAddComponent,
+    MainPageComponent,
+    AddItemFormComponent
   ],
   imports: [
     BrowserModule,
