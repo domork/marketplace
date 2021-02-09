@@ -14,7 +14,7 @@ public class ProductMapper {
     }
 
     public Product dtoToEntity(ProductDto productDto) {
-        return new Product(productDto.getID(),
+        return new Product(productDto.getId(),
                 productDto.getName(), productDto.getCategory(),
                 productDto.getDescription(),
                 productDto.getPrice(), productDto.getQuantity(),

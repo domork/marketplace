@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from '../dto/product';
 import {ProductService} from '../service/product.service';
+import {CompanyExtended} from '../dto/company-extended';
 
 @Component({
   selector: 'app-main-page',
@@ -10,6 +11,10 @@ import {ProductService} from '../service/product.service';
 export class MainPageComponent implements OnInit {
 
   currentProducts: Product[] = new Array<Product>();
+  currentCompanies: CompanyExtended[] = new Array<CompanyExtended>();
+
+  showProductAdd = false;
+  showCompanyAdd = false;
 
   constructor(private productService: ProductService) {
   }
@@ -18,7 +23,23 @@ export class MainPageComponent implements OnInit {
   }
 
   addProduct(newProduct: Product): void {
-    this.productService.addNewProduct(newProduct).subscribe(product => console.log(product + ' was successfully added'));
-    this.currentProducts.push(newProduct);
+
+    this.productService.addNewProduct(newProduct).subscribe(product => {
+      console.log(product + ' was successfully added');
+      this.currentProducts.push(product);
+    });
+    console.log(this.currentProducts);
+
   }
+
+  showProductAddDiv(): void {
+    this.showCompanyAdd = false;
+    this.showProductAdd = true;
+  }
+
+  showCompanyAddDiv(): void {
+    this.showCompanyAdd = true;
+    this.showProductAdd = false;
+  }
+
 }

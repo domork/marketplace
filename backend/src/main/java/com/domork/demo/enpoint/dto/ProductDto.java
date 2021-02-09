@@ -1,10 +1,9 @@
 package com.domork.demo.enpoint.dto;
 
 import java.math.BigDecimal;
-import java.util.Currency;
 
 public class ProductDto {
-    private Long ID;
+    private Long id;
     private String name;
     private String category;
     private String description;
@@ -16,8 +15,8 @@ public class ProductDto {
     public ProductDto() {
     }
 
-    public ProductDto(Long ID, String name, String category, String description, BigDecimal price, int quantity, String condition) {
-        this.ID = ID;
+    public ProductDto(Long id, String name, String category, String description, BigDecimal price, int quantity, String condition) {
+        this.id = id;
         this.name = name;
         this.category = category;
         this.description = description;
@@ -26,12 +25,12 @@ public class ProductDto {
         this.condition = condition;
     }
 
-    public Long getID() {
-        return ID;
+    public Long getId() {
+        return id;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -85,7 +84,7 @@ public class ProductDto {
     @Override
     public String toString() {
         return "ProductDto{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 ", description='" + description + '\'' +

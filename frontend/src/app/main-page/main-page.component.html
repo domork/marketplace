@@ -1,13 +1,19 @@
 <section class="company-product-section">
   <div class="buttons">
-    <button class="button is-primary is-light">Company</button>
-    <button class="button is-success is-light">Product</button>
+
+    <button class="button is-primary is-light" (click)="showCompanyAddDiv()">Company</button>
+    <button class="button is-success is-light" (click)="showProductAddDiv()">Product</button>
   </div>
 </section>
 
-<section class="add-item-section">
+<section class="add-item-section" [ngClass]="{ 'product-view':showProductAdd }">
   <div class="add-item-container">
-    <app-add-product-form style="padding: 20px;" (formSubmit)="addProduct($event)"></app-add-product-form>
-
+    <div *ngIf="showProductAdd">
+      <app-add-product-form style="padding: 20px;" (formSubmit)="addProduct($event)"></app-add-product-form>
+    </div>
   </div>
 </section>
+
+
+<app-item-list [productList]="currentProducts" [companyList]="currentCompanies"
+               [ngClass]="{ 'company-view':showCompanyAdd, 'product-view':showProductAdd }"></app-item-list>

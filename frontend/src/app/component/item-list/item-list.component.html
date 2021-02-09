@@ -1,1 +1,30 @@
-<p>item-list works!</p>
+<section class="items-section">
+  <div class="items-container">
+
+    <div class="product-column">
+      <h1>Products</h1>
+
+      <div class="items">
+        <div *ngFor="let item of productList">
+          <app-product-card
+            [product]="item"
+            style="display:block; margin-bottom: 20px"></app-product-card>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="company-column">
+      <h1>Companies</h1>
+
+      <div class="items">
+        <div *ngFor="let item of companyList">
+          <app-company-card
+
+            style="display:block; margin-bottom: 20px"></app-company-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
