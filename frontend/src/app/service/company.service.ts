@@ -14,12 +14,11 @@ const baseUri = environment.backendUrl + '/company';
 })
 export class CompanyService {
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
-  parsedCompany: Company = {id: undefined, name: '2'};
 
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getCompany(): Observable<CompanyExtended[]> {
+  getCompanies(): Observable<CompanyExtended[]> {
     return this.http.get<CompanyExtended[]>(baseUri).pipe(
       tap(_ => this.log('fetched companies')), catchError(this.handleError<CompanyExtended[]>('getCompany', [])));
   }

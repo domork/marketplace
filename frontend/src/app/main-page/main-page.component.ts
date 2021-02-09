@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Product} from '../dto/product';
+import {ProductService} from '../service/product.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  currentProducts: Product[] = new Array<Product>();
+
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit(): void {
   }
 
+  addProduct(newProduct: Product): void {
+    this.productService.addNewProduct(newProduct).subscribe(product => console.log(product + ' was successfully added'));
+    this.currentProducts.push(newProduct);
+  }
 }

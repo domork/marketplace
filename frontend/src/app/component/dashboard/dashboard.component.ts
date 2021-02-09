@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getCompanies(): void {
-    this.companyService.getCompany().subscribe(companies => this.companies = companies);
+    this.companyService.getCompanies().subscribe(companies => this.companies = companies);
     // this.companyService.getCompany().subscribe(companies => this.companies = companies.slice(0, 4));
   }
 }

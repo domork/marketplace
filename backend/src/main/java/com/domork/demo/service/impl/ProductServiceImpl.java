@@ -50,6 +50,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getOneProductByName(String name) {
+        validator.nameText(name);
         return productDAO.getOneProductByName(name);
     }
 }

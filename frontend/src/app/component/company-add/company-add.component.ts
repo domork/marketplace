@@ -14,12 +14,13 @@ export class CompanyAddComponent implements OnInit {
   (undefined, '', undefined, undefined, undefined);
   submitted = false;
 
+
   onSubmit(): void {
     this.submitted = true;
   }
 
   add(): void {
-    this.companyService.addNewCompany(this.model).subscribe(company => console.log(company + ' was successfully added'));
+    this.companyService.addNewCompany(this.model).subscribe(company => console.log(company.name + ' was successfully added'));
 
   }
 

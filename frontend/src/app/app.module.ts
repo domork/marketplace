@@ -10,7 +10,11 @@ import {MessagesComponent} from './component/messages/messages.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {CompanyAddComponent} from './component/company-add/company-add.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { AddItemFormComponent } from './component/add-item-form/add-item-form.component';
+import { ItemListComponent } from './component/item-list/item-list.component';
+import { AddCompanyFormComponent } from './component/add-company-form/add-company-form.component';
+import { AddProductFormComponent } from './component/add-product-form/add-product-form.component';
+import { ProductCardComponent } from './component/item-list/product-card/product-card.component';
+import { CompanyCardComponent } from './component/item-list/company-card/company-card.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { AddItemFormComponent } from './component/add-item-form/add-item-form.co
     DashboardComponent,
     CompanyAddComponent,
     MainPageComponent,
-    AddItemFormComponent
+    ItemListComponent,
+    AddCompanyFormComponent,
+    AddProductFormComponent,
+    ProductCardComponent,
+    CompanyCardComponent
   ],
   imports: [
     BrowserModule,
