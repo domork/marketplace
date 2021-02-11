@@ -7,6 +7,7 @@ import {MessageService} from './message.service';
 import {catchError, map, tap} from 'rxjs/operators';
 import {CompanyExtended} from '../dto/company-extended';
 import {Product} from "../dto/product";
+import {Country} from '@angular-material-extensions/select-country';
 
 const baseUri = environment.backendUrl + '/company';
 
@@ -30,6 +31,7 @@ export class CompanyService {
   }
 
   addNewCompany(company: CompanyExtended): Observable<CompanyExtended> {
+    company.basedIn = (company.basedIn as Country).name;
     return this.http.put<CompanyExtended>(baseUri, company, this.httpOptions);
   }
 

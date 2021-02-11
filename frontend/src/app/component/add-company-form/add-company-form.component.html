@@ -27,16 +27,21 @@
     <div class="field-body">
       <div class="field">
         <p class="control">
-          <input type="text" required name="website" class="input" placeholder="Website" [ngModel]="item.website">
+          <input type="text" name="website" class="input" placeholder="Website" [ngModel]="item.website">
         </p>
       </div>
 
+    <div>
       <mat-select-country appearance="outline"
                           label="Country"
-                          (onCountrySelected)="onCountrySelected($event)">
+                          [ngModel]="item.basedIn"
+                          name="basedIn"
+                          >
       </mat-select-country>
+    </div>
 
     </div>
+
 
   </div>
 

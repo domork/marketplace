@@ -1,9 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Product} from '../../dto/product';
 import {NgForm} from '@angular/forms';
 import {CompanyExtended} from '../../dto/company-extended';
 import {Country} from '@angular-material-extensions/select-country';
-import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 
 @Component({
   selector: 'app-add-company-form',
@@ -16,6 +14,7 @@ export class AddCompanyFormComponent implements OnInit {
   @Output() formSubmit: EventEmitter<CompanyExtended> = new EventEmitter<CompanyExtended>();
 
   isNewItem = false;
+  private country: string | undefined;
 
   constructor() {
   }
@@ -33,16 +32,9 @@ export class AddCompanyFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
-
     this.formSubmit.emit(form.value);
     form.reset();
   }
-
-  onCountrySelected(country: Country): void {
-    console.log(country);
-  }
-
-
 
 
 }
