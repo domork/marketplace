@@ -61,5 +61,12 @@ public interface CompanyService {
      */
     List<CompanyExtended> getAllCompaniesWithGivenName(String name);
 
+    /**
+     * Overwrites the company with the given ID inside of param
+     * to the values the given param.
+     * @param company with all values to be changed
+     * @return the company with changed values
+     */
+    CompanyExtended updateCompany(CompanyExtended company);
 
 }

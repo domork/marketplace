@@ -17,16 +17,6 @@ public interface Validator {
     boolean nameText(String s);
 
     /**
-     * Checks, if the company object contains null values,
-     * which must not be null (e.x. name).
-     *
-     * @param company to be checked
-     * @return true, if name of company is not null.
-     */
-    boolean checkCompanyNameOnNullValues(CompanyExtended company);
-
-
-    /**
      * Checks, if the ID is not null, bigger than 0
      * and smaller than MAXVALUE.
      * @param ID

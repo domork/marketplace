@@ -3,6 +3,7 @@ package com.domork.demo.service.impl;
 import com.domork.demo.enpoint.dto.CompanyExtendedDto;
 import com.domork.demo.entity.Company;
 import com.domork.demo.entity.CompanyExtended;
+import com.domork.demo.exception.ValidationException;
 import com.domork.demo.persistance.CompanyDAO;
 import com.domork.demo.service.CompanyService;
 import com.domork.demo.util.Validator;
@@ -53,6 +54,9 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public Company getCompanyByName(String name) {
+        if (name==null)
+            throw new ValidationException("name is null " +
+                    "and cannot be found at getCompanyByName");
         return companyDAO.getCompanyByName(name);
     }
 
@@ -61,5 +65,11 @@ public class CompanyServiceImpl implements CompanyService {
         if (!name.equals(""))
         validator.nameText(name);
         return companyDAO.getAllCompaniesWithGivenName(name);
+    }
+
+    @Override
+    public CompanyExtended updateCompany(CompanyExtended company) {
+        validator.checkCompany(company);
+        return companyDAO.updateCompany(company);
     }
 }

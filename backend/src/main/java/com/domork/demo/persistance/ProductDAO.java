@@ -57,4 +57,13 @@ public interface ProductDAO {
      * @return the product with the name in param
      */
     Product getOneProductByName(String name);
+
+    /**
+     * Updates all product values except of ID
+     * @param product contains these non-null values,
+     *                which will be updated
+     *                for the given ID
+     * @return the product with updated values
+     */
+    Product updateProduct (Product product);
 }

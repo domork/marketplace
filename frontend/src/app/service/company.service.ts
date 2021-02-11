@@ -6,6 +6,7 @@ import {environment} from '../../environments/environment';
 import {MessageService} from './message.service';
 import {catchError, map, tap} from 'rxjs/operators';
 import {CompanyExtended} from '../dto/company-extended';
+import {Product} from "../dto/product";
 
 const baseUri = environment.backendUrl + '/company';
 
@@ -32,6 +33,22 @@ export class CompanyService {
     return this.http.put<CompanyExtended>(baseUri, company, this.httpOptions);
   }
 
+  deleteCompany(company: CompanyExtended | number): Observable<CompanyExtended> {
+    const id = typeof company === 'number' ? company : company.id;
+    const url = `${baseUri}/${id}`;
+    return this.http.delete<Product>(url, this.httpOptions).pipe
+    (tap(prod => this.log(`deleted company with id: ${prod.id}`)),
+      catchError(this.handleError<Product>('deleteCompany')));
+  }
+
+  updateCompany(company: CompanyExtended, id: number | undefined): Observable<CompanyExtended> {
+    const url = `${baseUri}/${id}`;
+    company.id = id;
+    return this.http.put<CompanyExtended>(url, company, this.httpOptions).pipe
+    (tap(comp => this.log(`updated company with id: ${comp.id}`)),
+      catchError(this.handleError<CompanyExtended>('updateCompany')));
+
+  }
 
   private handleError<T>(operation = 'operation', result?: T): any {
     return (error: any): Observable<T> => {

@@ -43,7 +43,7 @@ public class ProductJdbcDAO implements ProductDAO {
             statement.setString(paramIndex++, product.getCategory());
             statement.setBigDecimal(paramIndex++, product.getPrice());
             statement.setInt(paramIndex++, product.getQuantity());
-            statement.setString(paramIndex, product.getCondition()==null?"new": product.getCondition());
+            statement.setString(paramIndex, product.getCondition() == null ? "new" : product.getCondition());
             return statement;
         }, keyHolder);
         product.setID(((Number) Objects.requireNonNull(keyHolder.getKeys()).get("id")).longValue());
@@ -53,7 +53,7 @@ public class ProductJdbcDAO implements ProductDAO {
 
     @Override
     public List<Product> getProductsByName(String name) {
-        LOGGER.trace("getProductsByName({})",name);
+        LOGGER.trace("getProductsByName({})", name);
         final String sql = "SELECT * FROM " + TABLE_NAME
                 + " WHERE name LIKE '" + name + "%' ORDER BY NAME ASC";
         List<Product> products = jdbcTemplate.query(sql, new Object[]{}, this::mapRow);
@@ -84,6 +84,28 @@ public class ProductJdbcDAO implements ProductDAO {
         if (product.isEmpty())
             throw new NotFoundException("No product with given name template was found");
         return product.get(0);
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        LOGGER.info("UPDATE PRODUCT ({})", product);
+        final String sql = "UPDATE product " +
+                "SET name=?, description=?, price=?, quantity=?, condition=?::productCondition" +
+                " WHERE id=?";
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        jdbcTemplate.update(connection -> {
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            int paramIndex = 1;
+            statement.setString(paramIndex++, product.getName());
+
+            statement.setString(paramIndex++, product.getDescription());
+            statement.setBigDecimal(paramIndex++, product.getPrice());
+            statement.setInt(paramIndex++, product.getQuantity());
+            statement.setString(paramIndex++, product.getCondition() == null ? "new" : product.getCondition());
+            statement.setLong(paramIndex, product.getID());
+            return statement;
+        }, keyHolder);
+        return product;
     }
 
     private Product mapRow(ResultSet resultSet, int i) throws SQLException {

@@ -1,5 +1,18 @@
 <section class="items-section">
   <div class="items-container">
+    <div class="company-column">
+      <h1>Companies</h1>
+
+      <div class="items">
+        <div *ngFor="let item of companyList">
+          <app-company-card
+            [company]="item"
+            (xButtonClick)="onCompanyDeleteButtonClicked(item)"
+            (cardClick)="onCompanyCardClicked(item)"
+            style="display:block; margin-bottom: 20px"></app-company-card>
+        </div>
+      </div>
+    </div>
 
     <div class="product-column">
       <h1>Products</h1>
@@ -8,20 +21,9 @@
         <div *ngFor="let item of productList">
           <app-product-card
             [product]="item"
+            (xButtonClick)="onProductDeleteButtonClicked(item)"
+            (cardClick)="onProductCardClicked(item)"
             style="display:block; margin-bottom: 20px"></app-product-card>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="company-column">
-      <h1>Companies</h1>
-
-      <div class="items">
-        <div *ngFor="let item of companyList">
-          <app-company-card
-
-            style="display:block; margin-bottom: 20px"></app-company-card>
         </div>
       </div>
     </div>

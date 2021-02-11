@@ -2,9 +2,11 @@ package com.domork.demo.enpoint;
 
 import com.domork.demo.enpoint.dto.CompanyDto;
 import com.domork.demo.enpoint.dto.CompanyExtendedDto;
+import com.domork.demo.enpoint.dto.ProductDto;
 import com.domork.demo.enpoint.mapper.CompanyExtendedMapper;
 import com.domork.demo.entity.Company;
 import com.domork.demo.entity.CompanyExtended;
+import com.domork.demo.entity.Product;
 import com.domork.demo.exception.NotFoundException;
 import com.domork.demo.enpoint.mapper.CompanyMapper;
 import com.domork.demo.exception.ValidationException;
@@ -30,11 +32,12 @@ public class CompanyEndpoint {
     private final CompanyService companyService;
     private final CompanyMapper companyMapper;
     private final CompanyExtendedMapper companyExtendedMapper;
+
     @Autowired
     public CompanyEndpoint(CompanyMapper companyMapper, CompanyService companyService, CompanyExtendedMapper companyExtendedMapper) {
         this.companyMapper = companyMapper;
         this.companyService = companyService;
-        this.companyExtendedMapper=companyExtendedMapper;
+        this.companyExtendedMapper = companyExtendedMapper;
     }
 
     @GetMapping
@@ -51,7 +54,7 @@ public class CompanyEndpoint {
             return new ResponseEntity<>(companyDtos, HttpStatus.OK);
         } catch (NotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "Error during reading companies. Possible reason: no such a company is stored", e);
+                    "Error during finding the companies. Possible reason: there is no stored company with given name", e);
         }
     }
 
@@ -80,7 +83,6 @@ public class CompanyEndpoint {
     }
 
 
-
     @PutMapping
     public ResponseEntity<CompanyExtendedDto> put(@RequestBody CompanyExtendedDto company) {
         LOGGER.info("PUT " + BASE_URL + "/{}", company);
@@ -91,7 +93,7 @@ public class CompanyEndpoint {
                 companyService.getCompanyByName(company.getName());
             } catch (NotFoundException e) {
 
-            //if not -> the new company will be saved
+                //if not -> the new company will be saved
                 return new ResponseEntity<CompanyExtendedDto>
                         (companyExtendedMapper.entityToDto(
                                 companyService.putNewCompany
@@ -106,9 +108,61 @@ public class CompanyEndpoint {
         throw new ResponseStatusException(HttpStatus.CONFLICT, "This company already exists");
     }
 
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<CompanyExtendedDto> updateCompany(@PathVariable("id") Long id, @RequestBody CompanyExtendedDto companyExtendedDto) {
+        LOGGER.info("UPDATE " + BASE_URL + "/{}", id);
+        try {
+            String name = companyExtendedDto.getName();
+            if (name != null) {
+                Company company = companyService.getCompanyByName(name);
+                if (!company.getId().equals(companyExtendedDto.getId()))
+                    throw new ResponseStatusException(HttpStatus.CONFLICT, "This name was already taken!");
+            } else throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Name must have a value!");
+
+        } catch (NotFoundException ignored) {
+        }
+        try {
+
+
+            return new ResponseEntity<CompanyExtendedDto>(companyExtendedMapper.entityToDto
+                    (companyService.updateCompany(companyExtendedMapper.dtoToEntity(companyExtendedDto))), HttpStatus.OK);
+        } catch (ValidationException e) {
+            LOGGER.warn("UPDATE COMPANY WITH ID: ({}) THROWS VALIDATION EXCEPTION", id);
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage(), e);
+
+        }
+    }
+    /*
+    *     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<ProductDto> updateProduct(@PathVariable("id") Long id, @RequestBody ProductDto productDto) {
+        LOGGER.info("UPDATE " + BASE_URL + "/{}", id);
+        try {
+            String name = productDto.getName();
+            if (name != null) {
+                Product product = productService.getOneProductByName(name);
+                if (!product.getID().equals(productDto.getId()))
+                    throw new ResponseStatusException(HttpStatus.CONFLICT, "This name was already taken!");
+            }
+        } catch (NotFoundException ignored) {
+        }
+        try {
+
+
+            return new ResponseEntity<ProductDto>(productMapper.entityToDto
+                    (productService.updateProduct(productMapper.dtoToEntity(productDto))), HttpStatus.OK);
+        }
+        catch (ValidationException e){
+            LOGGER.warn("UPDATE PRODUCT WITH ID: ({}) THROWS VALIDATION EXCEPTION",id);
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage(), e);
+
+        }
+    }
+    * */
+
     @GetMapping(value = "/brew_coffee_with_a_teapot")
     public String teaPot() {
-        LOGGER.info("I'M A TEAPOT" + BASE_URL +"/brew_coffee_with_a_teapot");
+        LOGGER.info("I'M A TEAPOT" + BASE_URL + "/brew_coffee_with_a_teapot");
         return "I am a teapot!";
     }
 

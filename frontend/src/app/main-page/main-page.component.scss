@@ -15,23 +15,22 @@
     font-size: 58px;
     color: white;
 
+    .button.is-success.is-light{
+      color: lighten($green, 12%);
+    }
+    .button.is-primary.is-primary{
+      color: lighten($red, 12%);
+    }
     .button.is-success.is-light, .button.is-primary.is-light{
       background-color: transparent;
       font-size: 58px;
-    }
-
-    &.green {
-      color: lighten($green, 12%);
-    }
-
-    &.red {
-      color: lighten($red, 12%);
     }
   }
 }
 
 .add-item-section {
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -43,7 +42,6 @@
 
 .product-view{
   .add-item-container {
-
     height: 175px;
   }
 }

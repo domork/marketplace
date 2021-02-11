@@ -100,6 +100,35 @@ public class CompanyJdbcDAO implements CompanyDAO {
         return company.get(0);
     }
 
+    @Override
+    public CompanyExtended updateCompany(CompanyExtended company) {
+        LOGGER.info("UPDATE COMPANY ({})", company);
+
+        final String sql = "UPDATE company " +
+                "SET name=? WHERE id=?";
+        jdbcTemplate.update(connection -> {
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            int paramIndex = 1;
+            statement.setString(paramIndex++, company.getName());
+            statement.setLong(paramIndex, company.getId());
+            return statement;
+        });
+        final String sqlExtended = "UPDATE companyDetailInformation SET website=?, description=?, basedIn=? " +
+                "WHERE id=?";
+        jdbcTemplate.update(connection -> {
+            PreparedStatement statement = connection.prepareStatement(sqlExtended, Statement.RETURN_GENERATED_KEYS);
+            int paramIndex = 1;
+            statement.setString(paramIndex++, company.getWebsite());
+            statement.setString(paramIndex++, company.getDescription());
+            statement.setString(paramIndex++, company.getBasedIn());
+            statement.setLong(paramIndex, company.getId());
+            return statement;
+        });
+        return company;
+
+
+    }
+
     private Company mapRow(ResultSet resultSet, int i) throws SQLException {
         final Company company = new Company();
         company.setId(resultSet.getLong("id"));

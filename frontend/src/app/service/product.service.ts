@@ -3,7 +3,6 @@ import {environment} from '../../environments/environment';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {MessageService} from './message.service';
 import {Observable, of} from "rxjs";
-import {CompanyExtended} from "../dto/company-extended";
 import {catchError, tap} from "rxjs/operators";
 import {Product} from "../dto/product";
 
@@ -33,6 +32,22 @@ export class ProductService {
     return this.http.put<Product>(baseUri, product, this.httpOptions);
   }
 
+  deleteProduct(product: Product | number): Observable<Product> {
+    const id = typeof product === 'number' ? product : product.id;
+    const url = `${baseUri}/${id}`;
+    return this.http.delete<Product>(url, this.httpOptions).pipe
+    (tap(prod => this.log(`deleted product with id: ${prod.id}`)),
+      catchError(this.handleError<Product>('deleteProduct')));
+  }
+
+  updateProduct(product: Product, id: number | undefined): Observable<Product> {
+    const url = `${baseUri}/${id}`;
+    product.id = id;
+    return this.http.put<Product>(url,product, this.httpOptions).pipe
+    (tap(prod => this.log(`updated product with id: ${prod.id}`)),
+      catchError(this.handleError<Product>('updateProduct')));
+
+  }
 
   private handleError<T>(operation = 'operation', result?: T): any {
     return (error: any): Observable<T> => {

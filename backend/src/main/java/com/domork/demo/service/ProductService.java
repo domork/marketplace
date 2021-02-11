@@ -57,4 +57,13 @@ public interface ProductService {
      * @return the product with the name in param
      */
     Product getOneProductByName(String name);
+
+    /**
+     * Updates all product values except of ID
+     * @param product contains all values,
+     *                which will be updated
+     *                for the given ID
+     * @return the product with updated values
+     */
+    Product updateProduct (Product product);
 }

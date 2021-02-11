@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
-@import '../node_modules/bulma/bulma.sass';
 @import 'main-styles.scss';
+@import '../node_modules/bulma/bulma.sass';
 
+
+
+html, body { height: 100%; }
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";

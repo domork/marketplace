@@ -25,19 +25,14 @@ public class ValidatorImpl implements Validator {
 
     @Override
     public boolean nameText(String s) {
+        if (s == null)
+            throw new ValidationException("text is null. Type in the real value!");
         if (textPattern.matcher(s).matches()) {
             if (s.length() >= 1 && s.length() <= 63) {
                 return true;
             } else throw new ValidationException("name length needs to be between 1 and 63 ");
         } else throw new ValidationException("name contains only letters from a to z or from A to Z, " +
                 "as well as ',', '.', ':', '/', ' '");
-    }
-
-    @Override
-    public boolean checkCompanyNameOnNullValues(CompanyExtended company) {
-        if (company.getName() != null)
-            return true;
-        else throw new ValidationException("Name of company is null!");
     }
 
     @Override
@@ -52,9 +47,7 @@ public class ValidatorImpl implements Validator {
 
     @Override
     public boolean checkProduct(Product product) {
-        if (product.getName() == null)
-            throw new ValidationException("Name was not given");
-        nameText(product.getName());
+
 
         if (product.getDescription() != null)
             nameText(product.getDescription());
@@ -66,7 +59,7 @@ public class ValidatorImpl implements Validator {
         }
         */
         BigDecimal price = product.getPrice();
-        if (price!=null&& price.compareTo(BigDecimal.ZERO) < 0)
+        if (price != null && price.compareTo(BigDecimal.ZERO) < 0)
             throw new ValidationException("price must be 0 or positive");
         if (product.getQuantity() < 0)
             throw new ValidationException("Quantity cannot be negative!");
@@ -83,7 +76,6 @@ public class ValidatorImpl implements Validator {
 
     @Override
     public boolean checkCompany(CompanyExtended companyExtended) {
-        checkCompanyNameOnNullValues(companyExtended);
         nameText(companyExtended.getName());
 
         if (companyExtended.getBasedIn() != null)
