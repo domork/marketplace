@@ -20,6 +20,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditCompanyComponent } from './component/edit-company/edit-company.component';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { ProductComponent } from './component/product/product.component';
+import { AboutComponent } from './component/about/about.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { BugsComponent } from './component/bugs/bugs.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { MatSelectCountryModule } from '@angular-material-extensions/select-coun
     ProductCardComponent,
     CompanyCardComponent,
     EditProductComponent,
-    EditCompanyComponent
+    EditCompanyComponent,
+    ProductComponent,
+    AboutComponent,
+    ContactComponent,
+    BugsComponent
   ],
   imports: [
     MatSelectCountryModule.forRoot('en'),

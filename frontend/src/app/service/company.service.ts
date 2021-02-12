@@ -31,21 +31,27 @@ export class CompanyService {
   }
 
   addNewCompany(company: CompanyExtended): Observable<CompanyExtended> {
-    company.basedIn = (company.basedIn as Country).name;
+    if (company.basedIn) {
+      company.basedIn = (company.basedIn as Country).name;
+    }
     return this.http.put<CompanyExtended>(baseUri, company, this.httpOptions);
   }
 
   deleteCompany(company: CompanyExtended | number): Observable<CompanyExtended> {
+
     const id = typeof company === 'number' ? company : company.id;
     const url = `${baseUri}/${id}`;
     return this.http.delete<Product>(url, this.httpOptions).pipe
-    (tap(prod => this.log(`deleted company with id: ${prod.id}`)),
+    (tap(_ => this.log(`deleted company with id: ${id}`)),
       catchError(this.handleError<Product>('deleteCompany')));
   }
 
   updateCompany(company: CompanyExtended, id: number | undefined): Observable<CompanyExtended> {
     const url = `${baseUri}/${id}`;
     company.id = id;
+    if (company.basedIn)
+    company.basedIn = (company.basedIn as Country).name;
+    console.log(company);
     return this.http.put<CompanyExtended>(url, company, this.httpOptions).pipe
     (tap(comp => this.log(`updated company with id: ${comp.id}`)),
       catchError(this.handleError<CompanyExtended>('updateCompany')));

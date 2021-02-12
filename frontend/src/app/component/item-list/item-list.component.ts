@@ -14,11 +14,8 @@ import {EditCompanyComponent} from "../edit-company/edit-company.component";
 })
 export class ItemListComponent implements OnInit {
 
-    @Input() productList: Product[] = [
-        new Product(42, 'test',
-            undefined, undefined,
-            undefined, undefined, undefined)];
-    @Input() companyList: CompanyExtended[];
+    @Input() productList: Product[] = [];
+    @Input() companyList: CompanyExtended[] = [];
     @Output() deleteProduct: EventEmitter<Product> = new EventEmitter<Product>();
     @Output() deleteCompany: EventEmitter<CompanyExtended> = new EventEmitter<CompanyExtended>();
 

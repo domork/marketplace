@@ -1,5 +1,5 @@
 <section class="company-product-section">
-  <div class="buttons">
+  <div class="buttons" style="margin-left: 30px">
 
     <button class="button is-primary is-light" (click)="showCompanyAddDiv()">COMPANY</button>
     <button class="button is-success is-light" (click)="showProductAddDiv()">PRODUCT</button>
@@ -21,6 +21,6 @@
 
 <app-item-list [productList]="currentProducts" [companyList]="currentCompanies"
                [ngClass]="{ 'company-view':showCompanyAdd, 'product-view':showProductAdd }"
-               (deleteProduct)="deleteProduct($event)"
+               (deleteProduct)="deleteProduct($event)" (deleteCompany)="deleteCompany($event)"
 ></app-item-list>
 

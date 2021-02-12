@@ -1,5 +1,5 @@
 <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
-  <div class="field is-horizontal" style="margin-bottom: 0">
+  <div class="field is-horizontal" >
     <div class="field-body">
 
       <div class="field">
@@ -9,7 +9,8 @@
       </div>
 
       <div class="field is-narrow">
-        <button type="submit" class="button" [ngClass]="{ 'is-primary': isNewItem, 'is-success':!isNewItem }"  [disabled]="!itemForm.valid">
+        <button type="submit" class="button" [ngClass]="{ 'is-primary': isNewItem, 'is-success':!isNewItem }"
+                [disabled]="!itemForm.valid">
           <p *ngIf="isNewItem"> Add</p>
           <p *ngIf="!isNewItem">Save</p>
         </button>
@@ -31,21 +32,21 @@
         </p>
       </div>
 
-    <div>
-      <mat-select-country appearance="outline"
-                          label="Country"
-                          [ngModel]="item.basedIn"
-                          name="basedIn"
-                          >
-      </mat-select-country>
-    </div>
+      <div class="country-form">
+        <div class="field">
+          <mat-select-country appearance="outline"
+                              label="Country"
+                              [ngModel]="item.basedIn"
+                              name="basedIn"
 
+          >
+          </mat-select-country>
+        </div>
+      </div>
     </div>
 
 
   </div>
-
-
 
 
 </form>

@@ -14,7 +14,7 @@ export class AddCompanyFormComponent implements OnInit {
   @Output() formSubmit: EventEmitter<CompanyExtended> = new EventEmitter<CompanyExtended>();
 
   isNewItem = false;
-  private country: string | undefined;
+
 
   constructor() {
   }
@@ -34,7 +34,10 @@ export class AddCompanyFormComponent implements OnInit {
   onSubmit(form: NgForm): void {
     this.formSubmit.emit(form.value);
     form.reset();
+    this.item.basedIn = undefined;
   }
 
-
+  newCountry(): boolean {
+    return this.isNewItem;
+  }
 }

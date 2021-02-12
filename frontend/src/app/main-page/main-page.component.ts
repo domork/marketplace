@@ -58,4 +58,12 @@ export class MainPageComponent implements OnInit {
     });
 
   }
+  deleteCompany(item: CompanyExtended): void {
+    let index = this.currentCompanies.indexOf(item);
+    this.companyService.deleteCompany(item).subscribe(_ => {
+      console.log(`delete ID ${item.id} succeeded`);
+      this.currentCompanies.splice(index, 1);
+    });
+
+  }
 }

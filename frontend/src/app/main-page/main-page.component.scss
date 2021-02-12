@@ -17,6 +17,7 @@
 
     .button.is-success.is-light{
       color: lighten($green, 12%);
+      margin-left: -20px;
     }
     .button.is-primary.is-primary{
       color: lighten($red, 12%);
@@ -45,3 +46,10 @@
     height: 175px;
   }
 }
+.company-view{
+  .add-item-container {
+    height: 125px;
+  }
+}
+
+

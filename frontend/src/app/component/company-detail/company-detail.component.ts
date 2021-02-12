@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {CompanyService} from '../../service/company.service';
 import {CompanyExtended} from '../../dto/company-extended';
+import {Product} from "../../dto/product";
 
 @Component({
   selector: 'app-company-detail',
@@ -18,6 +19,8 @@ export class CompanyDetailComponent implements OnInit {
               private location: Location) {
 
   }
+
+
 
   ngOnInit(): void {
     this.getCompany();

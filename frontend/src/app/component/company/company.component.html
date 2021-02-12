@@ -1,9 +1,23 @@
-<h2>
-  <ul class="companies">
-    <li *ngFor="let company of companies">
-      <a routerLink="/company/{{company.id}}">
-      <span class="badge">{{company.id}}</span> {{company.name}}
-      </a>
-    </li>
-  </ul>
-</h2>
+<div class = "columns">
+  <div class="column is-one-fifth">
+<section class="items-section" style="width: 400px">
+  <div class="items-container" style="margin-left: 15px">
+
+      <p style="margin-left: 0">Companies</p>
+
+      <div class="items">
+        <div *ngFor="let item of companyList">
+          <app-company-card
+            [company]="item"
+            (xButtonClick)="onCompanyDeleteButtonClicked(item)"
+            (cardClick)="onCompanyCardClicked(item)"
+            style="display:block; margin-bottom: 20px; width: 300px; "></app-company-card>
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+  <div class="column">
+    <img src="assets/background.svg">
+  </div>
+</div>

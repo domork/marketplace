@@ -2,7 +2,7 @@
 
 .items-section {
   display: flex;
-  padding: 50px;
+  padding: 40px;
 
   // Horizontally and vertically center flex children
   justify-content: center;
@@ -15,6 +15,7 @@
     width: 100%;
 
     .company-column, .product-column {
+
       display: flex;
       flex-direction: column;
       flex-basis: 0; // for the columns to be the same size, regardless of content
@@ -25,6 +26,8 @@
         font-size: 24px;
         font-weight: 900;
         text-transform: uppercase;
+
+
       }
 
       .items {
@@ -36,7 +39,7 @@
     }
 
     .product-column {
-      margin-right: 35px;
+
 
       h1 {
         color: $green;
@@ -44,7 +47,7 @@
     }
 
     .company-column {
-
+      margin-right: 35px;
       h1 {
         color: $red;
       }

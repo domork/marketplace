@@ -38,6 +38,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getProductsByName(String name) {
+        if (!name.equals(""))
         validator.nameText(name);
         return productDAO.getProductsByName(name);
     }

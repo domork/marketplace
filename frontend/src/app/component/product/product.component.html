@@ -1,0 +1,24 @@
+<div class="columns">
+  <div class="column is-one-fifth">
+    <section class="items-section" style="width: 400px">
+      <div class="items-container" style="margin-left: 9px">
+          <p>Productsㅤ</p>
+
+          <div class="items">
+            <div *ngFor="let item of productList">
+              <app-product-card
+                [product]="item"
+                (xButtonClick)="onProductDeleteButtonClicked(item)"
+                (cardClick)="onProductCardClicked(item)"
+                style="display:block; margin-bottom: 20px;width: 300px;"></app-product-card>
+            </div>
+          </div>
+
+
+      </div>
+    </section>
+  </div>
+  <div class="column">
+    <img src="assets/background.svg">
+  </div>
+</div>

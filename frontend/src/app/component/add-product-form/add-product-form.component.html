@@ -1,0 +1,73 @@
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+  <div class="field is-horizontal" style="margin-bottom: 0">
+    <div class="field-body">
+
+      <div class="field is-narrow">
+        <p class="control">
+            <input type="number"
+                   name="price" style="width: 100px; "
+                   class="input" placeholder="Price"
+                   [ngModel]="item.price">
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control">
+          <input type="text" required name="name" class="input" placeholder="Name" [ngModel]="item.name">
+        </p>
+      </div>
+
+      <div class="field is-narrow">
+        <button type="submit" class="button" [ngClass]="{ 'is-primary': isNewItem, 'is-success':!isNewItem }"  [disabled]="!itemForm.valid">
+          <p *ngIf="isNewItem"> Add</p>
+          <p *ngIf="!isNewItem">Save</p>
+        </button>
+      </div>
+
+    </div>
+  </div>
+      <div class="field is-narrow" style="margin-top: 17px">
+        <p class="control">
+          <input type="text" name="description" class="input" placeholder="Description" [ngModel]="item.description">
+        </p>
+      </div>
+
+    <div class="field is-horizontal">
+      <div class="field is-narrow">
+        <p class="control">
+          <label>
+            <input type="number" style="width: 100px" class="input" placeholder="Amount" name="quantity" [ngModel]="item.quantity">
+          </label>
+        </p>
+      </div>
+
+        <div class="field is-narrow" style="margin-top: 10px">
+
+          <label class="radio" style="margin-right: 10px;margin-left: 20px;font-weight: initial">
+            <input type="radio" value="new" name="condition" checked [ngModel]="item.condition" >
+            New
+          </label>
+          <label class="radio" style="margin-right: 10px;font-weight: initial ">
+            <input type="radio" value="like new" name="condition" [ngModel]="item.condition">
+            Like New
+          </label>
+          <label class="radio" style="margin-right: 10px;;font-weight: initial">
+            <input type="radio" value="used" name="condition" [ngModel]="item.condition">
+            Used
+          </label>
+          <label class="radio" style="margin-right: 10px;font-weight: initial">
+            <input type="radio" value="acceptable" name="condition" [ngModel]="item.condition">
+            Acceptable
+          </label>
+          <label class="radio" style="margin-right: 10px;font-weight: initial">
+            <input type="radio" name="condition" disabled>
+            Ahmm, I don't know??
+          </label>
+        </div>
+
+      </div>
+
+
+
+
+</form>
