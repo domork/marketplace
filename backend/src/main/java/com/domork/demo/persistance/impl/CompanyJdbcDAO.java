@@ -77,8 +77,9 @@ public class CompanyJdbcDAO implements CompanyDAO {
     @Override
     public void deleteById(Long id) {
         LOGGER.trace("deleteById({})", id);
-        jdbcTemplate.update("DELETE FROM company WHERE ID=?", id);
         jdbcTemplate.update("DELETE FROM companyDetailInformation WHERE ID=?", id);
+        jdbcTemplate.update("DELETE FROM company WHERE ID=?", id);
+
     }
 
     @Override

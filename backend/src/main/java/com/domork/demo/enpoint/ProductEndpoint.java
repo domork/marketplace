@@ -119,6 +119,9 @@ public class ProductEndpoint {
 
         } catch (NotFoundException ignored) {
         }
+        catch (ValidationException e){
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "bad grammar");
+        }
         try {
 
 

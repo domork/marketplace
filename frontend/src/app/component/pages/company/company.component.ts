@@ -1,9 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {CompanyService} from '../../service/company.service';
-import {MessageService} from '../../service/message.service';
-import {CompanyExtended} from "../../dto/company-extended";
-import {EditCompanyComponent} from "../edit-company/edit-company.component";
+import {CompanyService} from '../../../service/company.service';
+import {MessageService} from '../../../service/message.service';
+import {CompanyExtended} from "../../../dto/company-extended";
+import {EditCompanyComponent} from "../../edit-company/edit-company.component";
 import {MatDialog} from "@angular/material/dialog";
+import {Country} from "@angular-material-extensions/select-country";
 
 @Component({
   selector: 'app-company',
@@ -35,6 +36,9 @@ export class CompanyComponent implements OnInit {
   }
 
   onCompanyCardClicked(item: CompanyExtended): void {
+    if (item.basedIn){
+      item.basedIn = (item.basedIn as Country).name;
+    }
     const dialogRef = this.dialog.open(EditCompanyComponent, {
       width: '580px',
       data: item

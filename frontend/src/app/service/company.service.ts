@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {Company} from '../dto/company';
 import {environment} from '../../environments/environment';
@@ -28,6 +28,14 @@ export class CompanyService {
   getCompanyById(id: number): Observable<CompanyExtended> {
     this.messageService.add(`CompanyService: fetched company with id: ${id}`);
     return this.http.get<CompanyExtended>(baseUri + '/' + id);
+  }
+
+  getCompaniesByName(name: string): Observable<CompanyExtended[]> {
+    this.messageService.add(`CompanyService: fetched companies with name: ${name}`);
+    const params = new HttpParams().set('name', name);
+    const opt = {headers: new HttpHeaders({'Content-Type': 'application/json'}), params};
+
+    return this.http.get<CompanyExtended[]>(baseUri, opt).pipe(tap(_ => this.log('search')), catchError(this.handleError<CompanyExtended[]>(`searching companies`)));
   }
 
   addNewCompany(company: CompanyExtended): Observable<CompanyExtended> {

@@ -1,10 +1,10 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Company} from '../../dto/company';
+import {Company} from '../../../dto/company';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import {CompanyService} from '../../service/company.service';
-import {CompanyExtended} from '../../dto/company-extended';
-import {Product} from "../../dto/product";
+import {CompanyService} from '../../../service/company.service';
+import {CompanyExtended} from '../../../dto/company-extended';
+import {Product} from "../../../dto/product";
 
 @Component({
   selector: 'app-company-detail',

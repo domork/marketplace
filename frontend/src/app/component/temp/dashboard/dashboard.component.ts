@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Company} from '../../dto/company';
-import {CompanyService} from '../../service/company.service';
+import {Company} from '../../../dto/company';
+import {CompanyService} from '../../../service/company.service';
 
 @Component({
   selector: 'app-dashboard',

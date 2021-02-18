@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CompanyComponent} from './component/company/company.component';
-import {DashboardComponent} from './component/dashboard/dashboard.component';
-import {CompanyDetailComponent} from './component/company-detail/company-detail.component';
-import {CompanyAddComponent} from './component/company-add/company-add.component';
+import {CompanyComponent} from './component/pages/company/company.component';
+import {DashboardComponent} from './component/temp/dashboard/dashboard.component';
+import {CompanyDetailComponent} from './component/temp/company-detail/company-detail.component';
+import {CompanyAddComponent} from './component/temp/company-add/company-add.component';
 import {MainPageComponent} from './main-page/main-page.component';
-import {ProductComponent} from "./component/product/product.component";
-import {AboutComponent} from "./component/about/about.component";
-import {ContactComponent} from "./component/contact/contact.component";
-import {BugsComponent} from "./component/bugs/bugs.component";
+import {ProductComponent} from "./component/pages/product/product.component";
+import {AboutComponent} from "./component/pages/about/about.component";
+import {ContactComponent} from "./component/pages/contact/contact.component";
+import {BugsComponent} from "./component/pages/bugs/bugs.component";
 
 const routes: Routes = [
   {path: '', component: MainPageComponent},

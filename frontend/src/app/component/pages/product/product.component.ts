@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Product} from "../../dto/product";
-import {EditProductComponent} from "../edit-product/edit-product.component";
+import {Product} from "../../../dto/product";
+import {EditProductComponent} from "../../edit-product/edit-product.component";
 import {MatDialog} from "@angular/material/dialog";
-import {ProductService} from "../../service/product.service";
+import {ProductService} from "../../../service/product.service";
 
 @Component({
   selector: 'app-product',
