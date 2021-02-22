@@ -1,0 +1,52 @@
+<div *ngIf="isLoggedIn; else loggedOut">
+  Logged in as {{roles}}.
+</div>
+
+<ng-template #loggedOut>
+
+  <div class="field-body" style="margin-top: 20px;justify-content: center;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+      <div class="field">
+        <p class="control">
+          <label for="username">Username</label>
+          <input type="text" class="input" name="username" [(ngModel)]="form.username" #username="ngModel"
+                 required/>
+
+        </p>
+      </div>
+
+      <div *ngIf="f.submitted && username.invalid && username.errors!==null">
+        <div *ngIf="username.errors.required">Username is required</div>
+      </div>
+
+      <div class="field">
+        <p class="control">
+      <label for="password">Password</label>
+      <input type="password" class="input" name="password" [(ngModel)]="form.password" #password="ngModel"
+             required minlength="6"/>
+
+        </p>
+      </div>
+
+      <div *ngIf="f.submitted && password.invalid&&password.errors!==null">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+
+
+      <button class="button is-primary" style="margin-top: 10px">Login</button>
+      <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+        Login failed: {{errorMessage}}
+      </div>
+
+    </form>
+  </div>
+
+
+  <hr/>
+  <div class="field-body" style="justify-content: center; align-items: center">
+  <p style="margin-left: -10px">Don't have an account? &nbsp; </p>
+  <a href="signup" class="button is-info"> Sign Up</a>
+  </div>
+</ng-template>

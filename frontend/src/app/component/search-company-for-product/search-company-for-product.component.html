@@ -1,0 +1,23 @@
+<div id="search-component">
+  <div class="dropdown is-active">
+    <input #searchBox type="search" style="width: 250px"
+           class="input" placeholder="Manufacturer (Company name)"
+           name="Manufacturer" id="search-box"
+           (input)="search(searchBox.value); searchbarIsActive=searchBox.value!= null&&searchBox.value!=''"
+            />
+
+    <div class="dropdown-menu" id="dropdown-menu2" role="menu" *ngIf="searchbarIsActive">
+      <div class="dropdown-content">
+        <div class="dropdown-item" style="width: 250px">
+          <ul class="search-result">
+            <li *ngFor="let company of companies$ | async" class="col-1-4">
+              <a >
+                {{company.name}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from '../dto/product';
 import {ProductService} from '../service/product.service';
 import {CompanyExtended} from '../dto/company-extended';
-import {CompanyService} from "../service/company.service";
+import {CompanyService} from '../service/company.service';
 
 @Component({
   selector: 'app-main-page',
@@ -16,9 +16,11 @@ export class MainPageComponent implements OnInit {
 
   showProductAdd = false;
   showCompanyAdd = false;
+  isAllowedToAdd = true;
 
   constructor(private productService: ProductService,
               private companyService: CompanyService) {
+
   }
 
   ngOnInit(): void {
@@ -29,7 +31,7 @@ export class MainPageComponent implements OnInit {
     this.productService.addNewProduct(newProduct).subscribe(product => {
       console.log(product + ' was successfully added');
       this.currentProducts.push(product);
-    });
+    }, error => this.isAllowedToAdd = false);
   }
 
   addCompany(newCompany: CompanyExtended): void {
@@ -37,7 +39,7 @@ export class MainPageComponent implements OnInit {
     this.companyService.addNewCompany(newCompany).subscribe(company => {
       console.log(company + ' was successfully added');
       this.currentCompanies.push(company);
-    });
+    }, error => this.isAllowedToAdd = false);
   }
 
   showProductAddDiv(): void {
@@ -58,6 +60,7 @@ export class MainPageComponent implements OnInit {
     });
 
   }
+
   deleteCompany(item: CompanyExtended): void {
     let index = this.currentCompanies.indexOf(item);
     this.companyService.deleteCompany(item).subscribe(_ => {

@@ -38,3 +38,7 @@ CREATE TABLE IF NOT EXISTS companyDetailInformation
     basedIn         VARCHAR(255),
     FOREIGN KEY (ID) REFERENCES company(ID)
     );
+
+INSERT INTO roles(name) VALUES('ROLE_USER');
+INSERT INTO roles(name) VALUES('ROLE_PM');
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');

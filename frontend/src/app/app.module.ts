@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
+import {Injectable, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CompanyComponent} from './component/pages/company/company.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {CompanyDetailComponent} from './component/temp/company-detail/company-detail.component';
 import {MessagesComponent} from './component/temp/messages/messages.component';
@@ -25,6 +25,11 @@ import { AboutComponent } from './component/pages/about/about.component';
 import { ContactComponent } from './component/pages/contact/contact.component';
 import { BugsComponent } from './component/pages/bugs/bugs.component';
 import { SearchCompanyForProductComponent } from './component/search-company-for-product/search-company-for-product.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { LoginComponent } from './component/pages/login/login.component';
+import { RegisterComponent } from './component/pages/register/register.component';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
+
 
 @NgModule({
   declarations: [
@@ -46,19 +51,23 @@ import { SearchCompanyForProductComponent } from './component/search-company-for
     AboutComponent,
     ContactComponent,
     BugsComponent,
-    SearchCompanyForProductComponent
+    SearchCompanyForProductComponent,
+    LoginComponent,
+    RegisterComponent
   ],
-  imports: [
-    MatSelectCountryModule.forRoot('en'),
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatDialogModule
-  ],
-  providers: [],
+    imports: [
+        MatSelectCountryModule.forRoot('en'),
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        MatProgressBarModule
+    ],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+

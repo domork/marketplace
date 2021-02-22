@@ -8,13 +8,7 @@
         </p>
       </div>
 
-      <div class="field is-narrow">
-        <button type="submit" class="button" [ngClass]="{ 'is-primary': isNewItem, 'is-success':!isNewItem }"
-                [disabled]="!itemForm.valid">
-          <p *ngIf="isNewItem"> Add</p>
-          <p *ngIf="!isNewItem">Save</p>
-        </button>
-      </div>
+
 
     </div>
   </div>
@@ -24,13 +18,15 @@
     </p>
   </div>
 
+  <div class="field">
+    <p class="control">
+      <input type="text" name="website" class="input" placeholder="Website" [ngModel]="item.website">
+    </p>
+  </div>
+
   <div class="field is-horizontal">
     <div class="field-body">
-      <div class="field">
-        <p class="control">
-          <input type="text" name="website" class="input" placeholder="Website" [ngModel]="item.website">
-        </p>
-      </div>
+
 
       <div class="country-form">
         <div class="field">
@@ -42,6 +38,13 @@
           >
           </mat-select-country>
         </div>
+      </div>
+      <div class="field has-addons has-addons-right " >
+        <button type="submit" class="button is-medium" [ngClass]="{ 'is-primary': isNewItem, 'is-success':!isNewItem }"
+                [disabled]="!itemForm.valid">
+          <p *ngIf="isNewItem"> Add</p>
+          <p *ngIf="!isNewItem">Save</p>
+        </button>
       </div>
     </div>
 

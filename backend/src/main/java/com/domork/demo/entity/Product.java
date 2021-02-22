@@ -27,7 +27,11 @@ public class Product {
             this.condition = condition;
         }
 
-        public Long getID() {
+    public Product(String name) {
+        this.name=name;
+    }
+
+    public Long getID() {
             return ID;
         }
 

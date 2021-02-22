@@ -1,3 +1,17 @@
+<div class="notification is-success" *ngIf="!fetchingProducts&&successfullyFetchedProducts" >
+  <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+  <h3 style=" justify-content: center;align-items: center">
+    The products were successfully fetched from the backend !
+  </h3>
+</div>
+<div class="notification is-danger" *ngIf="!fetchingProducts&&!successfullyFetchedProducts" >
+  <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+  <h3 style=" justify-content: center;align-items: center">
+    The products could not be fetched from the backend !
+  </h3>
+
+</div>
+
 <div class="columns">
   <div class="column is-one-fifth">
     <section class="items-section" style="width: 400px">

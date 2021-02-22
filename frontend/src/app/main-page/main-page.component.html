@@ -1,5 +1,13 @@
+
+<div class="notification is-warning" *ngIf="!isAllowedToAdd" style="margin-bottom: 0px">
+  <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+  <h3 >
+    You are not allowed to add neither a product nor a company, only admins have rights to do this!
+  </h3>
+</div>
 <section class="company-product-section">
-  <div class="buttons" style="margin-left: 30px">
+  <img src="assets/arrow.svg" style="position: initial; width: 200px;height: 200px" *ngIf="!showCompanyAdd&&!showProductAdd">
+  <div class="buttons" style="margin-left: -30px">
 
     <button class="button is-primary is-light" (click)="showCompanyAddDiv()">COMPANY</button>
     <button class="button is-success is-light" (click)="showProductAddDiv()">PRODUCT</button>
@@ -8,6 +16,8 @@
 
 <section class="add-item-section" [ngClass]="{ 'product-view':showProductAdd }">
   <div class="add-item-container">
+
+
     <div *ngIf="showProductAdd">
       <app-add-product-form style="padding: 20px;" (formSubmit)="addProduct($event)"></app-add-product-form>
     </div>

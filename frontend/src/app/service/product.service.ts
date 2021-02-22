@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {MessageService} from './message.service';
-import {Observable, of} from "rxjs";
-import {catchError, tap} from "rxjs/operators";
-import {Product} from "../dto/product";
+import {Observable, of} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {Product} from '../dto/product';
 
 
 const baseUri = environment.backendUrl + '/product';
@@ -19,8 +19,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(baseUri).pipe(
-      (catchError(this.handleError<Product[]>('getProduct', []))));
+    return this.http.get<Product[]>(baseUri).pipe();
   }
 
   getProductById(id: number): Observable<Product> {
@@ -43,7 +42,7 @@ export class ProductService {
   updateProduct(product: Product, id: number | undefined): Observable<Product> {
     const url = `${baseUri}/${id}`;
     product.id = id;
-    return this.http.put<Product>(url,product, this.httpOptions).pipe
+    return this.http.put<Product>(url, product, this.httpOptions).pipe
     (tap(prod => this.log(`updated product with id: ${prod.id}`)),
       catchError(this.handleError<Product>('updateProduct')));
 

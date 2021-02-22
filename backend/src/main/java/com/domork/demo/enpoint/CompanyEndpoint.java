@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -41,6 +42,7 @@ public class CompanyEndpoint {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<List<CompanyExtendedDto>>
     getAllCompaniesWithGivenName(@RequestParam(value = "name", required = false, defaultValue = "")
                                          String name) {
@@ -59,6 +61,7 @@ public class CompanyEndpoint {
     }
 
     @GetMapping(value = "/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<CompanyExtendedDto> getOneById(@PathVariable("id") Long id) {
         LOGGER.info("GET " + BASE_URL + "/{}", id);
         try {
@@ -68,7 +71,7 @@ public class CompanyEndpoint {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error during reading company", e);
         }
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<CompanyDto> deleteOneById(@PathVariable("id") Long id) {
         LOGGER.info("DELETE " + BASE_URL + "/{}", id);
@@ -82,7 +85,7 @@ public class CompanyEndpoint {
         }
     }
 
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping
     public ResponseEntity<CompanyExtendedDto> put(@RequestBody CompanyExtendedDto company) {
         LOGGER.info("PUT " + BASE_URL + "/{}", company);
@@ -108,7 +111,7 @@ public class CompanyEndpoint {
         throw new ResponseStatusException(HttpStatus.CONFLICT, "This company already exists");
     }
 
-
+    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public ResponseEntity<CompanyExtendedDto> updateCompany(@PathVariable("id") Long id, @RequestBody CompanyExtendedDto companyExtendedDto) {
         LOGGER.info("UPDATE " + BASE_URL + "/{}", id);
@@ -122,6 +125,11 @@ public class CompanyEndpoint {
 
         } catch (NotFoundException ignored) {
         }
+        catch (ValidationException e){
+            LOGGER.warn("UPDATE COMPANY WITH ID: ({}) THROWS VALIDATION EXCEPTION", id);
+            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage(), e);
+
+        }
         try {
 
 
@@ -133,32 +141,6 @@ public class CompanyEndpoint {
 
         }
     }
-    /*
-    *     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<ProductDto> updateProduct(@PathVariable("id") Long id, @RequestBody ProductDto productDto) {
-        LOGGER.info("UPDATE " + BASE_URL + "/{}", id);
-        try {
-            String name = productDto.getName();
-            if (name != null) {
-                Product product = productService.getOneProductByName(name);
-                if (!product.getID().equals(productDto.getId()))
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "This name was already taken!");
-            }
-        } catch (NotFoundException ignored) {
-        }
-        try {
-
-
-            return new ResponseEntity<ProductDto>(productMapper.entityToDto
-                    (productService.updateProduct(productMapper.dtoToEntity(productDto))), HttpStatus.OK);
-        }
-        catch (ValidationException e){
-            LOGGER.warn("UPDATE PRODUCT WITH ID: ({}) THROWS VALIDATION EXCEPTION",id);
-            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage(), e);
-
-        }
-    }
-    * */
 
     @GetMapping(value = "/brew_coffee_with_a_teapot")
     public String teaPot() {

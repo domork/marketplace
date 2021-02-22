@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -38,6 +39,7 @@ public class ProductEndpoint {
     }
 
     @PutMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ProductDto> addProduct(@RequestBody ProductDto product) {
         LOGGER.info("PUT " + BASE_URL + "/{}", product);
         try {
@@ -64,6 +66,7 @@ public class ProductEndpoint {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<List<ProductDto>> getProductsByName(@RequestParam(value = "name",
             required = false, defaultValue = "") String name) {
         LOGGER.info("getProductsByName: ({})", name);
@@ -83,6 +86,7 @@ public class ProductEndpoint {
     }
 
     @GetMapping(value = "/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<ProductDto> getOneById(@PathVariable("id") Long id) {
         LOGGER.info("GET " + BASE_URL + "/{}", id);
         try {
@@ -94,6 +98,7 @@ public class ProductEndpoint {
     }
 
     @DeleteMapping(value = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ProductDto> deleteOneById(@PathVariable("id") Long id) {
         LOGGER.info("DELETE " + BASE_URL + "/{}", id);
         try {
@@ -107,6 +112,7 @@ public class ProductEndpoint {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ProductDto> updateProduct(@PathVariable("id") Long id, @RequestBody ProductDto productDto) {
         LOGGER.info("UPDATE " + BASE_URL + "/{}", id);
         try {

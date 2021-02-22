@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  app:
+    image: 'backend:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://92.38.184.190:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=jdkaLSKMv9c2MCm12mVIcKvd24001cCVJ
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:12.6'
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=jdkaLSKMv9c2MCm12mVIcKvd24001cCVJ

@@ -2,7 +2,7 @@
   <div class="navbar-brand">
 
     <a class="navbar-item" routerLink="/">
-        <img src="../assets/logo.png">
+      <img src="../assets/logo.png">
     </a>
 
   </div>
@@ -39,10 +39,27 @@
         </div>
       </div>
     </div>
-
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light" routerLink="login" *ngIf="!isLoggedIn">
+            Login
+          </a>
+          <a class="button is-light" routerLink="signup" *ngIf="!isLoggedIn">
+            Sign Up
+          </a>
+          <a class="button mat-primary is-light " (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
-
+<div class="notification is-primary" *ngIf="isSignedOut" style="margin-bottom: 0px">
+  <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+  <h3 >
+    You were successfully logged out!
+  </h3>
+</div>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
 

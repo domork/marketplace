@@ -6,7 +6,7 @@ import {environment} from '../../environments/environment';
 import {MessageService} from './message.service';
 import {catchError, map, tap} from 'rxjs/operators';
 import {CompanyExtended} from '../dto/company-extended';
-import {Product} from "../dto/product";
+import {Product} from '../dto/product';
 import {Country} from '@angular-material-extensions/select-country';
 
 const baseUri = environment.backendUrl + '/company';
@@ -22,7 +22,7 @@ export class CompanyService {
 
   getCompanies(): Observable<CompanyExtended[]> {
     return this.http.get<CompanyExtended[]>(baseUri).pipe(
-      tap(_ => this.log('fetched companies')), catchError(this.handleError<CompanyExtended[]>('getCompany', [])));
+      tap(_ => this.log('fetched companies')));
   }
 
   getCompanyById(id: number): Observable<CompanyExtended> {
@@ -57,9 +57,9 @@ export class CompanyService {
   updateCompany(company: CompanyExtended, id: number | undefined): Observable<CompanyExtended> {
     const url = `${baseUri}/${id}`;
     company.id = id;
-    if (company.basedIn)
+    if (company.basedIn) {
     company.basedIn = (company.basedIn as Country).name;
-    console.log(company);
+    }
     return this.http.put<CompanyExtended>(url, company, this.httpOptions).pipe
     (tap(comp => this.log(`updated company with id: ${comp.id}`)),
       catchError(this.handleError<CompanyExtended>('updateCompany')));

@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Product} from "../../../dto/product";
-import {EditProductComponent} from "../../edit-product/edit-product.component";
-import {MatDialog} from "@angular/material/dialog";
-import {ProductService} from "../../../service/product.service";
+import {Product} from '../../../dto/product';
+import {EditProductComponent} from '../../edit-product/edit-product.component';
+import {MatDialog} from '@angular/material/dialog';
+import {ProductService} from '../../../service/product.service';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +10,9 @@ import {ProductService} from "../../../service/product.service";
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+
+  fetchingProducts = true;
+  successfullyFetchedProducts = false;
 
   constructor(public dialog: MatDialog, private productService: ProductService) {
   }
@@ -22,14 +25,24 @@ export class ProductComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.productService.getProducts().subscribe(products => this.productList = products);
+    this.productService.getProducts().subscribe(products => {
+      this.productList = products;
+      this.fetchingProducts = false;
+      this.successfullyFetchedProducts = true;
+    }, err => {
+      this.fetchingProducts = false;
+      this.successfullyFetchedProducts = false;
+    });
+
   }
 
+
+
   onProductDeleteButtonClicked(item: Product): void {
-    let index = this.productList.indexOf(item);
+    const index = this.productList.indexOf(item);
     this.productService.deleteProduct(item).subscribe(_ => {
       console.log(`delete product ID ${item.id} succeeded`);
-      this.productList.splice(index, 1);
+      this.productList. splice(index, 1);
     });
   }
 

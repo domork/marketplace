@@ -20,7 +20,6 @@ function get_output_dimensions() {
 
 function check_arguments(callback) {
     if (process.argv.length != 3) {
-        console.log(help_message)
         process.exit(1)
     }
 
@@ -28,7 +27,7 @@ function check_arguments(callback) {
     if (/^[0-9]*:[0-9]*$/.test(dimensions) && dimensions.length > 2) {
         var output_folder = get_output_directory()
         console.log("Output folder: " + output_folder)
-        
+
         if (!fs.existsSync(output_folder)){
             fs.mkdirSync(output_folder)
         }
