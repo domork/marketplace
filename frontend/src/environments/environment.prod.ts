@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  backendUrl: 'http://domork.at:8080'
+  backendUrl: 'http://92.38.163.207:8080'
 };
+

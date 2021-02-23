@@ -34,7 +34,7 @@ export class AddCompanyFormComponent implements OnInit {
   onSubmit(form: NgForm): void {
     this.formSubmit.emit(form.value);
     form.reset();
-    this.item.basedIn = undefined;
+    this.item.basedIn = '';
   }
 
   newCountry(): boolean {

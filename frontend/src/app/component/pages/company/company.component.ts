@@ -14,6 +14,9 @@ import {Country} from '@angular-material-extensions/select-country';
 export class CompanyComponent implements OnInit {
   fetchingCompanies = true;
   successfullyFetchedCompanies = false;
+  errorMessage = '';
+  errorMessageIsActive = false;
+
   @Input() companyList: CompanyExtended[] = [];
   @Output() deleteCompany: EventEmitter<CompanyExtended> = new EventEmitter<CompanyExtended>();
 
@@ -25,7 +28,19 @@ export class CompanyComponent implements OnInit {
       this.companyList = companies;
       this.fetchingCompanies = false;
       this.successfullyFetchedCompanies = true;
+
     }, err => {
+      this.errorMessage = err.error.error;
+      switch (this.errorMessage) {
+        case 'Not Found': {
+          this.errorMessage = 'There are no companies saved in the DB right now. Please, add some clicking on the left top logo';
+          break;
+        }
+        case 'Unauthorized': {
+          this.errorMessage = 'You are not authorized! Please login first';
+          break;
+        }
+      }
       this.fetchingCompanies = false;
       this.successfullyFetchedCompanies = false;
     });
@@ -39,9 +54,13 @@ export class CompanyComponent implements OnInit {
 
   onCompanyDeleteButtonClicked(item: CompanyExtended): void {
     const index = this.companyList.indexOf(item);
-    this.companyService.deleteCompany(item).subscribe(_ => {
+    this.companyService.deleteCompany(item).subscribe(a => {
       console.log(`delete ID ${item.id} succeeded`);
+
       this.companyList.splice(index, 1);
+    }, error => {
+      this.errorMessage = 'Only admins can delete the company!';
+      this.errorMessageIsActive = true;
     });
   }
 
@@ -59,8 +78,17 @@ export class CompanyComponent implements OnInit {
         this.companyService.updateCompany(result, item.id).subscribe(s => {
           console.log(`success at updating the company with id ${result.id}`);
           this.companyList[this.companyList.indexOf(item)] = result;
+        }, error => {
+          this.errorMessage = 'Only admins can edit the company!';
+          this.errorMessageIsActive = true;
+
         });
       }
     });
+  }
+
+
+  errorMessageDisable(): void {
+    this.errorMessageIsActive = false;
   }
 }

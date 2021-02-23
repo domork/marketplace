@@ -35,7 +35,7 @@ export class CompanyService {
     const params = new HttpParams().set('name', name);
     const opt = {headers: new HttpHeaders({'Content-Type': 'application/json'}), params};
 
-    return this.http.get<CompanyExtended[]>(baseUri, opt).pipe(tap(_ => this.log('search')), catchError(this.handleError<CompanyExtended[]>(`searching companies`)));
+    return this.http.get<CompanyExtended[]>(baseUri, opt);
   }
 
   addNewCompany(company: CompanyExtended): Observable<CompanyExtended> {
@@ -49,9 +49,7 @@ export class CompanyService {
 
     const id = typeof company === 'number' ? company : company.id;
     const url = `${baseUri}/${id}`;
-    return this.http.delete<Product>(url, this.httpOptions).pipe
-    (tap(_ => this.log(`deleted company with id: ${id}`)),
-      catchError(this.handleError<Product>('deleteCompany')));
+    return this.http.delete<CompanyExtended>(url, this.httpOptions);
   }
 
   updateCompany(company: CompanyExtended, id: number | undefined): Observable<CompanyExtended> {
@@ -60,9 +58,7 @@ export class CompanyService {
     if (company.basedIn) {
     company.basedIn = (company.basedIn as Country).name;
     }
-    return this.http.put<CompanyExtended>(url, company, this.httpOptions).pipe
-    (tap(comp => this.log(`updated company with id: ${comp.id}`)),
-      catchError(this.handleError<CompanyExtended>('updateCompany')));
+    return this.http.put<CompanyExtended>(url, company, this.httpOptions);
 
   }
 

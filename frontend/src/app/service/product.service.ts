@@ -34,17 +34,13 @@ export class ProductService {
   deleteProduct(product: Product | number): Observable<Product> {
     const id = typeof product === 'number' ? product : product.id;
     const url = `${baseUri}/${id}`;
-    return this.http.delete<Product>(url, this.httpOptions).pipe
-    (tap(prod => this.log(`deleted product with id: ${prod.id}`)),
-      catchError(this.handleError<Product>('deleteProduct')));
+    return this.http.delete<Product>(url, this.httpOptions);
   }
 
   updateProduct(product: Product, id: number | undefined): Observable<Product> {
     const url = `${baseUri}/${id}`;
     product.id = id;
-    return this.http.put<Product>(url, product, this.httpOptions).pipe
-    (tap(prod => this.log(`updated product with id: ${prod.id}`)),
-      catchError(this.handleError<Product>('updateProduct')));
+    return this.http.put<Product>(url, product, this.httpOptions);
 
   }
 

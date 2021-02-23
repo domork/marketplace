@@ -1,22 +1,29 @@
-<div class="notification is-success" *ngIf="!fetchingProducts&&successfullyFetchedProducts" >
+<div class="notification is-success" *ngIf="!fetchingProducts&&successfullyFetchedProducts" style="margin: 0;">
   <button class="delete" onclick="this.parentElement.style.display='none'"></button>
   <h3 style=" justify-content: center;align-items: center">
     The products were successfully fetched from the backend !
   </h3>
 </div>
-<div class="notification is-danger" *ngIf="!fetchingProducts&&!successfullyFetchedProducts" >
+<div class="notification is-danger" *ngIf="!fetchingProducts&&!successfullyFetchedProducts" style="margin: 0">
   <button class="delete" onclick="this.parentElement.style.display='none'"></button>
   <h3 style=" justify-content: center;align-items: center">
-    The products could not be fetched from the backend !
+    The products could not be fetched from the backend ! => Possible reason: {{errorMessage}}
   </h3>
+</div>
 
+<div class="notification is-warning" *ngIf="errorMessageIsActive" >
+  <button class="delete" onclick="this.parentElement.style.display='none'" (click)="errorMessageDisable()"
+   style="margin: 0"></button>
+  <h3 style=" justify-content: center;align-items: center">
+   {{errorMessage}}
+  </h3>
 </div>
 
 <div class="columns">
   <div class="column is-one-fifth">
     <section class="items-section" style="width: 400px">
       <div class="items-container" style="margin-left: 9px">
-          <p>Productsㅤ</p>
+          <p>Products</p>
 
           <div class="items">
             <div *ngFor="let item of productList">
