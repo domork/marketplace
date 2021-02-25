@@ -12,7 +12,7 @@
       <div class="field">
         <p class="control">
           <label for="name">Your name</label>
-          <input type="text" class="input" name="name" [(ngModel)]="form.name" #name="ngModel" required/>
+          <input placeholder="min 3 chars" type="text" class="input" name="name" [(ngModel)]="form.name" #name="ngModel" required />
         </p>
       </div>
 
@@ -24,8 +24,8 @@
       <div class="field">
         <p class="control">
           <label for="username">Username</label>
-          <input type="text" class="input" name="username" [(ngModel)]="form.username" #username="ngModel"
-                 required/>
+          <input placeholder="min 3 chars" type="text" class="input" name="username" [(ngModel)]="form.username" #username="ngModel"
+                 required />
 
         </p>
       </div>
@@ -37,7 +37,7 @@
       <div class="field">
         <p class="control">
           <label for="email">Email</label>
-          <input type="text" class="input" name="email" [(ngModel)]="form.email" #email="ngModel" required email/>
+          <input  placeholder="email@company.at" type="text" class="input" name="email" [(ngModel)]="form.email" #email="ngModel" required email/>
 
         </p>
       </div>
@@ -50,7 +50,7 @@
       <div class="field">
         <p class="control">
           <label for="password">Password</label>
-          <input type="password" class="input" name="password" [(ngModel)]="form.password" #password="ngModel"
+          <input placeholder="min 6 chars" type="password" class="input" name="password" [(ngModel)]="form.password" #password="ngModel"
                  required minlength="6"/>
         </p>
       </div>
