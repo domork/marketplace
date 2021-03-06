@@ -1,7 +1,7 @@
 package com.domork.demo.persistance;
 
 import com.domork.demo.entity.Product;
-
+import com.domork.demo.exception.NotFoundException;
 import java.util.List;
 
 public interface ProductDAO {
@@ -42,6 +42,8 @@ public interface ProductDAO {
      * Finds the product with the given ID
      * @param ID of product to be found
      * @return the product with given ID
+     * @throws NotFoundException when no product with
+     * given ID exists
      */
     Product getProductById (Long ID);
 
@@ -55,6 +57,8 @@ public interface ProductDAO {
      * Finds only one specific product with such a name
      * @param name of product to be found
      * @return the product with the name in param
+     * @throws NotFoundException when no product with
+     * given ID exists
      */
     Product getOneProductByName(String name);
 

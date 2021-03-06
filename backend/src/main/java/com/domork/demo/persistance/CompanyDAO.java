@@ -2,6 +2,7 @@ package com.domork.demo.persistance;
 
 import com.domork.demo.entity.Company;
 import com.domork.demo.entity.CompanyExtended;
+import com.domork.demo.exception.NotFoundException;
 
 import java.util.List;
 
@@ -20,6 +21,8 @@ public interface CompanyDAO {
      * Searches the company with ID
      * @param id of company to be given
      * @return company with the given ID
+     * @throws NotFoundException when no company
+     * with given ID exists
      */
     CompanyExtended getOneById (Long id);
 
@@ -41,6 +44,8 @@ public interface CompanyDAO {
      * "AMA" and "AMWQL" will be returned
      * @param name of companies to be find
      * @return the list of companies with given name
+     * @throws NotFoundException when no company with
+     * given name exists
      */
     List<CompanyExtended> getAllCompaniesWithGivenName(String name);
 
@@ -55,6 +60,8 @@ public interface CompanyDAO {
      * "AMA" will be returned
      * @param name of company to be find
      * @return the company with given name
+     * @throws NotFoundException when no company with
+     * given name exists
      */
     Company getCompanyByName(String name);
 
